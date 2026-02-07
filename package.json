@@ -1,0 +1,51 @@
+{
+  "name": "english-puzzle",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format:fix": "prettier --write .",
+    "format:check": "prettier --check .",
+    "stylelint": "stylelint \"**/*.css\"",
+    "stylelint:fix": "stylelint \"**/*.css\" --fix",
+    "type:check": "tsc --noEmit",
+    "fix": "npm-run-all --parallel --continue-on-error format:fix lint:fix stylelint:fix type:check",
+    "strip-comments": "npx tsx scripts/strip-comments.ts `git ls-files`"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "firebase": "^12.9.0",
+    "next": "16.1.6",
+    "next-intl": "^4.8.2",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-hook-form": "^7.71.1",
+    "react-hot-toast": "^2.6.0",
+    "uuid": "^13.0.0",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@types/node": "^20.19.32",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "@types/strip-comments": "^2.0.4",
+    "dotenv": "^17.2.4",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.8.1",
+    "strip-comments": "^2.0.1",
+    "stylelint": "^17.1.1",
+    "stylelint-config-clean-order": "^8.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "^5",
+    "typescript-eslint": "^8.54.0"
+  }
+}
