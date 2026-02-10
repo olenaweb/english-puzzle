@@ -1,7 +1,73 @@
 {
   "HomePage": {
-    "title": "Welcome",
-    "description": "This is the home page"
+    "title": "English Puzzle",
+    "SignInLabel": "Sign In",
+    "SignUpLabel": "Sign Up",
+    "SignOutLabel": "Sign Out",
+    "MainPage": "Main Page",
+    "logoAlt": "logo",
+    "welcomeUnauth": "Welcome!",
+    "welcomeAuth": "Welcome back, {user}!",
+    "defaultUser": "user",
+    "welcomeClientLink": "Welcome to the English Puzzle",
+    "clientNavLink": "Client",
+    "puzzleLink": "Puzzle",
+    "statisticsLink": "Statistics",
+    "signingOut": "Signing Out...",
+    "goodbye": "Goodbye!",
+    "signOutError": "Failed to sign out",
+    "generalInformation": " This is a simple application that allows you to test your English skills by solving puzzles. You can sign in to save your progress and access additional features. Enjoy playing and improving your English!"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "sorry": "Sorry, the page you are looking for does not exist.",
+    "btn": "Return to Home"
+  },
+  "LocaleSwitcher": {
+    "en": "EN",
+    "ru": "RU",
+    "label": "Language"
+  },
+  "Footer": {
+    "developedBy": "Developed with ❤️ by Olena Nevzorova",
+    "githubLink": "GitHub"
+  },
+  "AuthForm": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "signIn": "Continue",
+    "signUp": "Continue",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "showConfirmPassword": "Show confirm password",
+    "hideConfirmPassword": "Hide confirm password",
+    "signInTitle": "Sign In to Your Account",
+    "signUpTitle": "Create Your Account",
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailIncorrect": "Incorrect email",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "At least 8 characters",
+      "passwordUppercase": "Need at least one uppercase letter",
+      "passwordLowercase": "Need at least one lowercase letter",
+      "passwordDigit": "Need at least one digit",
+      "passwordSpecial": "Need special character @#$!^%*?&_-",
+      "passwordUnicode": "Must be in valid Unicode format",
+      "confirmPasswordRequired": "Confirm password is required",
+      "passwordsMatch": "Passwords don't match"
+    },
+    "signingIn": "Signing In...",
+    "welcomeBack": "Welcome back!",
+    "signInFailed": "Sign in failed. Please try again.",
+    "signUpFailed": "Sign Up failed. Please try again.",
+    "signOutFailed": "Sign out failed. Please try again.",
+    "registering": "Registering...",
+    "registrationSuccess": "Registration successful! Welcome!",
+    "registrationFailed": "Registration failed. Please try again.",
+    "firebaseConfigError": "Firebase configuration is not correct",
+    "AuthFailed": "Auth failed. Please try again."
   }
 }
-

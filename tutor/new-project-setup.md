@@ -696,3 +696,42 @@ my-new-app/
 
 **Дата создания документа:** 7 февраля 2026 г.
 **Версия:** 1.0
+
+
+### Add Firebase to your web app
+Completed
+Register app
+2
+Add Firebase SDK
+
+Use npm
+
+Use a <script> tag
+If you're already using npm and a module bundler such as webpack or Rollup, you can run the following command to install the latest SDK (Learn more):
+
+```bash
+npm install firebase
+```
+Then, initialize Firebase and begin using the SDKs for the products you'd like to use.
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAtsA6DdUP5CpxpwL3O--KcXfIS2SOnT7U",
+  authDomain: "english-puzzle-f0b48.firebaseapp.com",
+  projectId: "english-puzzle-f0b48",
+  storageBucket: "english-puzzle-f0b48.firebasestorage.app",
+  messagingSenderId: "560933486702",
+  appId: "1:560933486702:web:ff4374f972c934ae36667f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+Note: This option uses the modular JavaScript SDK, which provides reduced SDK size.
+
+Learn more about Firebase for web: Get Started, Web SDK API Reference, Samples
+

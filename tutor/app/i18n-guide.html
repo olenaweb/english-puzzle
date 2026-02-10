@@ -1,0 +1,1101 @@
+<!DOCTYPE html><html><head>
+      <title>i18n-guide</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Olena\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      <div>
+<h1 id="руководство-по-интернационализации-i18n-в-nextjs-приложении">Руководство по интернационализации (i18n) в Next.js приложении </h1>
+<h2 id="содержание">Содержание </h2>
+<ol>
+<li><a href="#%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Введение</a></li>
+<li><a href="#%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-i18n">Архитектура i18n</a></li>
+<li><a href="#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0">Установка и настройка</a></li>
+<li><a href="#%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%BE%D0%B2">Структура файлов переводов</a></li>
+<li><a href="#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%BE%D0%B2-%D0%B2-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D0%B0%D1%85">Использование переводов в компонентах</a></li>
+<li><a href="#routing-%D0%B8-%D0%BD%D0%B0%D0%B2%D0%B8%D0%B3%D0%B0%D1%86%D0%B8%D1%8F">Routing и навигация</a></li>
+<li><a href="#server-components-vs-client-components">Server Components vs Client Components</a></li>
+<li><a href="#%D0%B4%D0%B8%D0%BD%D0%B0%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BF%D0%BE%D0%BB%D1%8F%D1%86%D0%B8%D1%8F">Динамические значения и интерполяция</a></li>
+<li><a href="#middleware-%D0%B8-%D0%B0%D0%B2%D1%82%D0%BE%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D1%8F%D0%B7%D1%8B%D0%BA%D0%B0">Middleware и автоопределение языка</a></li>
+<li><a href="#%D0%BB%D1%83%D1%87%D1%88%D0%B8%D0%B5-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B8">Лучшие практики</a></li>
+<li><a href="#%D1%82%D0%B8%D0%BF%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8-%D0%B8-%D0%B8%D1%85-%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F">Типичные ошибки и их решения</a></li>
+<li><a href="#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D0%B8%D0%B7-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F">Примеры из приложения</a></li>
+</ol>
+<hr>
+<h2 id="введение">Введение </h2>
+<p>В данном приложении используется библиотека <strong>next-intl</strong> для интернационализации (i18n). Она обеспечивает:</p>
+<ul>
+<li>✅ Поддержку нескольких языков (английский, русский)</li>
+<li>✅ Автоматический routing на основе локали</li>
+<li>✅ Server-side и Client-side переводы</li>
+<li>✅ Типобезопасность (TypeScript)</li>
+<li>✅ SEO-оптимизацию для многоязычного контента</li>
+</ul>
+<p><strong>Текущие поддерживаемые языки:</strong></p>
+<ul>
+<li><code>en</code> - английский (по умолчанию)</li>
+<li><code>ru</code> - русский</li>
+</ul>
+<hr>
+<h2 id="архитектура-i18n">Архитектура i18n </h2>
+<h3 id="структура-папок">Структура папок </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>english-puzzle/
+├── messages/                  # Файлы переводов
+│   ├── en.json               # Английские переводы
+│   └── ru.json               # Русские переводы
+├── src/
+│   ├── i18n/                 # Конфигурация i18n
+│   │   ├── routing.ts        # Настройки роутинга и локалей
+│   │   ├── navigation.ts     # Утилиты навигации
+│   │   └── request.ts        # Конфигурация для Server Components
+│   ├── middleware.ts         # Middleware для определения языка
+│   └── app/
+│       └── [locale]/         # Динамический сегмент для языка
+│           ├── layout.tsx    # Layout с провайдером переводов
+│           └── page.tsx      # Главная страница
+</code></pre><h3 id="ключевые-концепции">Ключевые концепции </h3>
+<ol>
+<li><strong>Динамический routing</strong>: URL содержит код языка (<code>/en/...</code>, <code>/ru/...</code>)</li>
+<li><strong>Провайдер контекста</strong>: <code>NextIntlClientProvider</code> оборачивает приложение</li>
+<li><strong>Разделение переводов</strong>: JSON файлы в папке <code>messages/</code></li>
+<li><strong>Type-safe</strong>: TypeScript обеспечивает типобезопасность ключей переводов</li>
+</ol>
+<hr>
+<h2 id="установка-и-настройка">Установка и настройка </h2>
+<h3 id="1-установка-библиотеки">1. Установка библиотеки </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">npm</span> <span class="token function">install</span> next-intl
+</code></pre><p><strong>Из package.json:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"next-intl"</span><span class="token operator">:</span> <span class="token string">"^4.8.2"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="2-конфигурация-routing">2. Конфигурация routing </h3>
+<p><strong>Файл: <code>src/i18n/routing.ts</code></strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-import">import</span> <span class="token punctuation">{</span> defineRouting <span class="token punctuation">}</span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/routing'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token punctuation">{</span> createNavigation <span class="token punctuation">}</span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/navigation'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Определяем поддерживаемые языки и язык по умолчанию</span>
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-const">const</span> routing <span class="token operator">=</span> <span class="token function">defineRouting</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  locales<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'en'</span><span class="token punctuation">,</span> <span class="token string">'ru'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>        <span class="token comment">// Список поддерживаемых языков</span>
+  defaultLocale<span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>          <span class="token comment">// Язык по умолчанию</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Тип для TypeScript</span>
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-type">type</span> <span class="token class-name">Locale</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword keyword-typeof">typeof</span> routing<span class="token punctuation">.</span>locales<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token builtin">number</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Экспортируем навигационные утилиты</span>
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span> Link<span class="token punctuation">,</span> redirect<span class="token punctuation">,</span> usePathname<span class="token punctuation">,</span> useRouter <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createNavigation</span><span class="token punctuation">(</span>routing<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>📌 Замечания:</strong></p>
+<ul>
+<li><code>locales</code> - массив всех поддерживаемых языков</li>
+<li><code>defaultLocale</code> - язык, который будет использоваться, если язык не определен</li>
+<li><code>Locale</code> - TypeScript тип для валидации локали</li>
+</ul>
+<h3 id="3-конфигурация-для-server-components">3. Конфигурация для Server Components </h3>
+<p><strong>Файл: <code>src/i18n/request.ts</code></strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-import">import</span> <span class="token punctuation">{</span> getRequestConfig <span class="token punctuation">}</span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/server'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token punctuation">{</span> routing <span class="token punctuation">}</span> <span class="token keyword keyword-from">from</span> <span class="token string">'./routing'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token function">getRequestConfig</span><span class="token punctuation">(</span><span class="token keyword keyword-async">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> requestLocale <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-let">let</span> locale <span class="token operator">=</span> <span class="token keyword keyword-await">await</span> requestLocale<span class="token punctuation">;</span>
+
+  <span class="token comment">// Проверяем, что локаль поддерживается</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>locale <span class="token operator">||</span> <span class="token operator">!</span>routing<span class="token punctuation">.</span>locales<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>locale <span class="token keyword keyword-as">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    locale <span class="token operator">=</span> routing<span class="token punctuation">.</span>defaultLocale<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">{</span>
+    locale<span class="token punctuation">,</span>
+    <span class="token comment">// Динамически загружаем файл переводов</span>
+    messages<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token keyword keyword-await">await</span> <span class="token keyword keyword-import">import</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">../../messages/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>locale<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.json</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>default<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>📌 Замечания:</strong></p>
+<ul>
+<li><code>requestLocale</code> - локаль из текущего запроса</li>
+<li>Происходит автоматическая загрузка соответствующего JSON файла</li>
+<li>Если локаль не поддерживается, используется язык по умолчанию</li>
+</ul>
+<h3 id="4-настройка-nextjs">4. Настройка Next.js </h3>
+<p><strong>Файл: <code>next.config.ts</code></strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-import">import</span> createNextIntlPlugin <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/plugin'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> withNextIntl <span class="token operator">=</span> <span class="token function">createNextIntlPlugin</span><span class="token punctuation">(</span><span class="token string">'./src/i18n/request.ts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> nextConfig<span class="token operator">:</span> NextConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ваши настройки</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token function">withNextIntl</span><span class="token punctuation">(</span>nextConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p><strong>📌 Замечания:</strong></p>
+<ul>
+<li>Плагин <code>createNextIntlPlugin</code> интегрирует next-intl в сборку Next.js</li>
+<li>Путь указывает на файл конфигурации запросов</li>
+</ul>
+<h3 id="5-middleware-для-роутинга">5. Middleware для роутинга </h3>
+<p><strong>Файл: <code>src/middleware.ts</code></strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-import">import</span> createMiddleware <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/middleware'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token punctuation">{</span> routing <span class="token punctuation">}</span> <span class="token keyword keyword-from">from</span> <span class="token string">'./i18n/routing'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Создаем middleware для обработки локалей</span>
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token function">createMiddleware</span><span class="token punctuation">(</span>routing<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Определяем, на какие маршруты будет действовать middleware</span>
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-const">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+  matcher<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">'/(ru|en)/:path*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p><strong>📌 Замечания:</strong></p>
+<ul>
+<li>Middleware автоматически перенаправляет <code>/</code> на <code>/en</code> или <code>/ru</code></li>
+<li><code>matcher</code> определяет, какие URL обрабатываются</li>
+<li>Поддерживается автоопределение языка браузера</li>
+</ul>
+<hr>
+<h2 id="структура-файлов-переводов">Структура файлов переводов </h2>
+<h3 id="формат-json">Формат JSON </h3>
+<p>Файлы переводов организованы по пространствам имен (namespaces) для лучшей структуризации.</p>
+<p><strong>Файл: <code>messages/en.json</code></strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"HomePage"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"English Puzzle"</span><span class="token punctuation">,</span>
+    <span class="token property">"SignInLabel"</span><span class="token operator">:</span> <span class="token string">"Sign In"</span><span class="token punctuation">,</span>
+    <span class="token property">"SignUpLabel"</span><span class="token operator">:</span> <span class="token string">"Sign Up"</span><span class="token punctuation">,</span>
+    <span class="token property">"welcomeAuth"</span><span class="token operator">:</span> <span class="token string">"Welcome back, {user}!"</span><span class="token punctuation">,</span>
+    <span class="token property">"defaultUser"</span><span class="token operator">:</span> <span class="token string">"user"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"AuthForm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"Email"</span><span class="token punctuation">,</span>
+    <span class="token property">"password"</span><span class="token operator">:</span> <span class="token string">"Password"</span><span class="token punctuation">,</span>
+    <span class="token property">"validation"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"emailRequired"</span><span class="token operator">:</span> <span class="token string">"Email is required"</span><span class="token punctuation">,</span>
+      <span class="token property">"passwordMinLength"</span><span class="token operator">:</span> <span class="token string">"At least 8 characters"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"LocaleSwitcher"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"en"</span><span class="token operator">:</span> <span class="token string">"EN"</span><span class="token punctuation">,</span>
+    <span class="token property">"ru"</span><span class="token operator">:</span> <span class="token string">"RU"</span><span class="token punctuation">,</span>
+    <span class="token property">"label"</span><span class="token operator">:</span> <span class="token string">"Language"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Файл: <code>messages/ru.json</code></strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"HomePage"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Английская Головоломка"</span><span class="token punctuation">,</span>
+    <span class="token property">"SignInLabel"</span><span class="token operator">:</span> <span class="token string">"Войти"</span><span class="token punctuation">,</span>
+    <span class="token property">"SignUpLabel"</span><span class="token operator">:</span> <span class="token string">"Зарегистрироваться"</span><span class="token punctuation">,</span>
+    <span class="token property">"welcomeAuth"</span><span class="token operator">:</span> <span class="token string">"С возвращением, {user}!"</span><span class="token punctuation">,</span>
+    <span class="token property">"defaultUser"</span><span class="token operator">:</span> <span class="token string">"пользователь"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"AuthForm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"Почта"</span><span class="token punctuation">,</span>
+    <span class="token property">"password"</span><span class="token operator">:</span> <span class="token string">"Пароль"</span><span class="token punctuation">,</span>
+    <span class="token property">"validation"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"emailRequired"</span><span class="token operator">:</span> <span class="token string">"Почта обязательна"</span><span class="token punctuation">,</span>
+      <span class="token property">"passwordMinLength"</span><span class="token operator">:</span> <span class="token string">"Не менее 8 символов"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"LocaleSwitcher"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"en"</span><span class="token operator">:</span> <span class="token string">"EN"</span><span class="token punctuation">,</span>
+    <span class="token property">"ru"</span><span class="token operator">:</span> <span class="token string">"RU"</span><span class="token punctuation">,</span>
+    <span class="token property">"label"</span><span class="token operator">:</span> <span class="token string">"Язык"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="организация-переводов">Организация переводов </h3>
+<p><strong>1. Группировка по функциональности</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"ComponentName"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"key1"</span><span class="token operator">:</span> <span class="token string">"value1"</span><span class="token punctuation">,</span>
+    <span class="token property">"key2"</span><span class="token operator">:</span> <span class="token string">"value2"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>2. Вложенные объекты</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"AuthForm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"validation"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"emailRequired"</span><span class="token operator">:</span> <span class="token string">"Email is required"</span><span class="token punctuation">,</span>
+      <span class="token property">"passwordRequired"</span><span class="token operator">:</span> <span class="token string">"Password is required"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>3. Плюрализация (если нужна)</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"items"</span><span class="token operator">:</span> <span class="token string">"{count, plural, =0 {No items} =1 {One item} other {# items}}"</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>📌 Рекомендации:</strong></p>
+<ul>
+<li>✅ Используйте понятные ключи (<code>signIn</code>, а не <code>btn1</code>)</li>
+<li>✅ Группируйте переводы по компонентам или страницам</li>
+<li>✅ Держите структуру одинаковой во всех языковых файлах</li>
+<li>❌ Не дублируйте переводы (используйте повторно)</li>
+<li>❌ Не храните в переводах HTML код</li>
+</ul>
+<hr>
+<h2 id="использование-переводов-в-компонентах">Использование переводов в компонентах </h2>
+<h3 id="client-components">Client Components </h3>
+<p>Для клиентских компонентов используется хук <code>useTranslations</code>.</p>
+<p><strong>Пример из приложения: <code>src/components/footer/footer.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>  <span class="token comment">// ← Обязательная директива для Client Component</span>
+
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Link</span> <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports">styles</span> <span class="token keyword keyword-from">from</span> <span class="token string">'./footer.module.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Загружаем пространство имен 'Footer'</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'Footer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span><span class="token property-access">footer</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span><span class="token property-access">line</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span><span class="token comment">/* Использование перевода */</span><span class="token punctuation">}</span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>styles<span class="token punctuation">.</span>dev<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> bold</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'developedBy'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> 
+          <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>https://github.com/olenaweb<span class="token punctuation">'</span></span> 
+          <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>styles<span class="token punctuation">.</span>dev<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> bold</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span>
+          <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>_blank<span class="token punctuation">'</span></span> 
+          <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>noopener noreferrer<span class="token punctuation">'</span></span>
+        <span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          - Github olenaweb
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span><span class="token property-access">line2</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>styles<span class="token punctuation">.</span>school<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> bold</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">RS School</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>styles<span class="token punctuation">.</span>year<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> bold</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">2026</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Как это работает:</strong></p>
+<ol>
+<li><code>useTranslations('Footer')</code> загружает все ключи из <code>messages/[lang].json</code> в разделе <code>Footer</code></li>
+<li><code>t('developedBy')</code> возвращает значение для текущего языка</li>
+<li>При смене языка компонент автоматически обновляется</li>
+</ol>
+<h3 id="server-components">Server Components </h3>
+<p>Для серверных компонентов используется асинхронная функция <code>useTranslations</code> из <code>next-intl/server</code>.</p>
+<p><strong>Пример: Server Component</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/server'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-async">async</span> <span class="token keyword keyword-function">function</span> <span class="token function">ServerComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token keyword keyword-await">await</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'description'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>📌 Различия:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Тип компонента</th>
+<th>Импорт</th>
+<th>Async</th>
+<th>Директива</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client Component</td>
+<td><code>'next-intl'</code></td>
+<td>Нет</td>
+<td><code>'use client'</code></td>
+</tr>
+<tr>
+<td>Server Component</td>
+<td><code>'next-intl/server'</code></td>
+<td>Да</td>
+<td>Нет</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="routing-и-навигация">Routing и навигация </h2>
+<h3 id="использование-link">Использование Link </h3>
+<p><strong>❌ Неправильно:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">Link</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next/link'</span><span class="token punctuation">;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/puzzle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Go to Puzzle</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><strong>✅ Правильно:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Link</span> <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/puzzle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Go to Puzzle</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><strong>Пример из приложения: <code>src/components/Header/Header.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Link</span><span class="token punctuation">,</span> useRouter <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span><span class="token comment">/* Link автоматически добавляет префикс локали */</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/<span class="token punctuation">'</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>classes<span class="token punctuation">[</span><span class="token string">'logo-wrapper'</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Image</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/logo.png<span class="token punctuation">'</span></span> <span class="token attr-name">alt</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'logoAlt'</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token attr-name">width</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">60</span><span class="token punctuation">}</span></span> <span class="token attr-name">height</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token number">60</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      
+      </span><span class="token punctuation">{</span>user <span class="token operator">?</span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/auth/signin<span class="token punctuation">'</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>classes<span class="token punctuation">.</span><span class="token property-access">button</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'SignInLabel'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/auth/signup<span class="token punctuation">'</span></span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>classes<span class="token punctuation">.</span><span class="token property-access">button</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'SignUpLabel'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword keyword-null">null</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Что происходит:</strong></p>
+<ul>
+<li><code>/</code> → <code>/en/</code> или <code>/ru/</code></li>
+<li><code>/puzzle</code> → <code>/en/puzzle</code> или <code>/ru/puzzle</code></li>
+<li>Локаль определяется автоматически из контекста</li>
+</ul>
+<h3 id="программная-навигация">Программная навигация </h3>
+<p><strong>Пример из приложения: <code>src/components/Header/Header.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useRouter <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword keyword-const">const</span> <span class="token function-variable function">handleSignOut</span> <span class="token operator">=</span> <span class="token keyword keyword-async">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-try">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword keyword-await">await</span> <span class="token function">signOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// Перенаправление с учетом текущей локали</span>
+      router<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword keyword-catch">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleSignOut<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'SignOutLabel'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="переключение-языка">Переключение языка </h3>
+<p><strong>Пример из приложения: <code>src/components/LocaleSwitcher/LocaleSwitcher.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Locale</span><span class="token punctuation">,</span> useLocale<span class="token punctuation">,</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useParams <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next/navigation'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">ChangeEvent</span><span class="token punctuation">,</span> useTransition <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> usePathname<span class="token punctuation">,</span> useRouter <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> routing <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/routing'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports">classes</span> <span class="token keyword keyword-from">from</span> <span class="token string">'./LocaleSwitcher.module.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">LocaleSwitcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'LocaleSwitcher'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> defaultValue <span class="token operator">=</span> <span class="token function">useLocale</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">// Текущая локаль</span>
+  <span class="token keyword keyword-const">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>isPending<span class="token punctuation">,</span> startTransition<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useTransition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> pathname <span class="token operator">=</span> <span class="token function">usePathname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// Текущий путь без локали</span>
+  <span class="token keyword keyword-const">const</span> params <span class="token operator">=</span> <span class="token function">useParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// Параметры маршрута</span>
+
+  <span class="token keyword keyword-function">function</span> <span class="token function">onSelectChange</span><span class="token punctuation">(</span>event<span class="token operator">:</span> <span class="token maybe-class-name">ChangeEvent</span><span class="token operator">&lt;</span><span class="token maybe-class-name">HTMLSelectElement</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> nextLocale <span class="token operator">=</span> event<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token keyword keyword-as">as</span> <span class="token maybe-class-name">Locale</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Переход с сохранением текущего пути</span>
+    <span class="token function">startTransition</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      router<span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span>
+        <span class="token punctuation">{</span> pathname<span class="token punctuation">,</span> params <span class="token punctuation">}</span> <span class="token keyword keyword-as">as</span> <span class="token maybe-class-name">Parameters</span><span class="token operator">&lt;</span><span class="token keyword keyword-typeof">typeof</span> router<span class="token punctuation">.</span><span class="token property-access">replace</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+        <span class="token punctuation">{</span> locale<span class="token operator">:</span> nextLocale <span class="token punctuation">}</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>sr-only<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'label'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span>
+        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>locale-switcher<span class="token punctuation">'</span></span>
+        <span class="token attr-name">defaultValue</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>defaultValue<span class="token punctuation">}</span></span>
+        <span class="token attr-name">disabled</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>isPending<span class="token punctuation">}</span></span>
+        <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>onSelectChange<span class="token punctuation">}</span></span>
+        <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>classes<span class="token punctuation">.</span><span class="token property-access">select</span><span class="token punctuation">}</span></span>
+      <span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span>routing<span class="token punctuation">.</span><span class="token property-access">locales</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>locale<span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>locale<span class="token punctuation">}</span></span> <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>locale<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span>locale<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* 'EN' или 'RU' из переводов */</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Как это работает:</strong></p>
+<ol>
+<li><strong>useLocale()</strong> - получаем текущий язык (<code>en</code> или <code>ru</code>)</li>
+<li><strong>usePathname()</strong> - получаем путь без префикса локали (<code>/puzzle</code> вместо <code>/en/puzzle</code>)</li>
+<li><strong>useParams()</strong> - сохраняем все параметры маршрута</li>
+<li><strong>router.replace()</strong> - переходим на тот же путь с новой локалью</li>
+<li><strong>useTransition()</strong> - обеспечивает плавный переход без блокировки UI</li>
+</ol>
+<p><strong>Результат:</strong></p>
+<ul>
+<li>Находясь на <code>/en/puzzle</code>, при выборе "RU" переходим на <code>/ru/puzzle</code></li>
+<li>Все данные страницы сохраняются</li>
+<li>Все переводы обновляются автоматически</li>
+</ul>
+<hr>
+<h2 id="server-components-vs-client-components">Server Components vs Client Components </h2>
+<h3 id="когда-использовать-server-components">Когда использовать Server Components </h3>
+<p><strong>✅ Используйте Server Components:</strong></p>
+<ul>
+<li>Когда не нужна интерактивность</li>
+<li>Для статического контента</li>
+<li>Для SEO-оптимизации</li>
+<li>Когда нужен доступ к серверным данным</li>
+</ul>
+<p><strong>Пример: <code>src/app/[locale]/page.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> use <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> setRequestLocale <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/server'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">MainPage</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/components/main-page/main-page'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-type">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  params<span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> locale<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Home</span><span class="token punctuation">(</span><span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token maybe-class-name">Props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span> locale <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">use</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Устанавливаем локаль для серверного рендеринга</span>
+  <span class="token function">setRequestLocale</span><span class="token punctuation">(</span>locale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">MainPage</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>📌 Особенности:</strong></p>
+<ul>
+<li><code>setRequestLocale(locale)</code> - обязательно для статической генерации</li>
+<li><code>params</code> теперь Promise в Next.js 15+</li>
+<li>Используйте <code>use()</code> для распаковки Promise</li>
+</ul>
+<h3 id="когда-использовать-client-components">Когда использовать Client Components </h3>
+<p><strong>✅ Используйте Client Components:</strong></p>
+<ul>
+<li>Когда нужны хуки React (useState, useEffect)</li>
+<li>Для обработки событий (onClick, onChange)</li>
+<li>Когда нужен доступ к browser API</li>
+<li>Для анимаций и интерактивности</li>
+</ul>
+<p><strong>Пример: <code>src/components/LocaleSwitcher/LocaleSwitcher.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>  <span class="token comment">// ← Обязательно!</span>
+
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTransition <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">LocaleSwitcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'LocaleSwitcher'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>isPending<span class="token punctuation">,</span> startTransition<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useTransition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// ... интерактивная логика</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="layout-с-провайдером">Layout с провайдером </h3>
+<p><strong>Пример из приложения: <code>src/app/[locale]/layout.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">NextIntlClientProvider</span> <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> notFound <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next/navigation'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> setRequestLocale <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/server'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> getMessages <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/server'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> routing <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/routing'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-type">type</span> <span class="token class-name">Props</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  children<span class="token operator">:</span> <span class="token maybe-class-name">React</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ReactNode</span></span><span class="token punctuation">;</span>
+  params<span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> locale<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-async">async</span> <span class="token keyword keyword-function">function</span> <span class="token function">LocaleLayout</span><span class="token punctuation">(</span><span class="token punctuation">{</span> children<span class="token punctuation">,</span> params <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token maybe-class-name">Props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span> locale <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword keyword-await">await</span> params<span class="token punctuation">;</span>
+  
+  <span class="token comment">// Проверяем, что локаль поддерживается</span>
+  <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>routing<span class="token punctuation">.</span><span class="token property-access">locales</span><span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span>locale <span class="token keyword keyword-as">as</span> <span class="token builtin">any</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">notFound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setRequestLocale</span><span class="token punctuation">(</span>locale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Загружаем переводы для текущей локали</span>
+  <span class="token keyword keyword-const">const</span> messages <span class="token operator">=</span> <span class="token keyword keyword-await">await</span> <span class="token function">getMessages</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NextIntlClientProvider</span></span> <span class="token attr-name">locale</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>locale<span class="token punctuation">}</span></span> <span class="token attr-name">messages</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>messages<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Header</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>container<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Footer</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NextIntlClientProvider</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>📌 Ключевые моменты:</strong></p>
+<ol>
+<li><strong>NextIntlClientProvider</strong> - делает переводы доступными всем дочерним компонентам</li>
+<li><strong>getMessages()</strong> - загружает JSON файл переводов</li>
+<li><strong>setRequestLocale()</strong> - необходимо для статической генерации</li>
+<li><strong>notFound()</strong> - перенаправляет на 404 если локаль не поддерживается</li>
+</ol>
+<hr>
+<h2 id="динамические-значения-и-интерполяция">Динамические значения и интерполяция </h2>
+<h3 id="простая-интерполяция">Простая интерполяция </h3>
+<p><strong>JSON:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"HomePage"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"welcomeAuth"</span><span class="token operator">:</span> <span class="token string">"Welcome back, {user}!"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Компонент:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Вариант 1: Объект с параметрами</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'welcomeAuth'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> user<span class="token operator">:</span> <span class="token string">'John'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">// Результат: "Welcome back, John!"</span>
+
+<span class="token comment">// Вариант 2: Значение по умолчанию из переводов</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'welcomeAuth'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> user<span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'defaultUser'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">// Результат EN: "Welcome back, user!"</span>
+<span class="token comment">// Результат RU: "С возвращением, пользователь!"</span>
+</code></pre><p><strong>Пример из приложения: <code>src/context/auth-context.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'AuthForm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Динамическое сообщение об ошибке</span>
+<span class="token keyword keyword-let">let</span> translatedError<span class="token operator">:</span> <span class="token known-class-name class-name">AuthError</span> <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>
+  t <span class="token operator">?</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'signInFailed'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>error <span class="token keyword keyword-as">as</span> <span class="token known-class-name class-name">Error</span><span class="token punctuation">)</span><span class="token operator">?.</span>message <span class="token operator">:</span> <span class="token string">'Sign in failed. Please try again.'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="rich-text-и-html">Rich Text и HTML </h3>
+<p><strong>❌ Не храните HTML в переводах:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"text"</span><span class="token operator">:</span> <span class="token string">"&lt;strong&gt;Bold text&lt;/strong&gt;"</span>  <span class="token comment">// Плохо!</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>✅ Используйте Rich Text API:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>t<span class="token punctuation">.</span><span class="token method function property-access">rich</span><span class="token punctuation">(</span><span class="token string">'welcomeMessage'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">strong</span><span class="token operator">:</span> <span class="token punctuation">(</span>chunks<span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>chunks<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">,</span>
+  user<span class="token operator">:</span> userName
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><strong>JSON:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"welcomeMessage"</span><span class="token operator">:</span> <span class="token string">"Welcome, &lt;strong&gt;{user}&lt;/strong&gt;!"</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="условные-переводы">Условные переводы </h3>
+<p><strong>JSON:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"AuthForm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"showPassword"</span><span class="token operator">:</span> <span class="token string">"Show password"</span><span class="token punctuation">,</span>
+    <span class="token property">"hidePassword"</span><span class="token operator">:</span> <span class="token string">"Hide password"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Компонент:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>showPassword<span class="token punctuation">,</span> setShowPassword<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'AuthForm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token function">setShowPassword</span><span class="token punctuation">(</span><span class="token operator">!</span>showPassword<span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+  </span><span class="token punctuation">{</span>showPassword <span class="token operator">?</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'hidePassword'</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'showPassword'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre><hr>
+<h2 id="middleware-и-автоопределение-языка">Middleware и автоопределение языка </h2>
+<h3 id="автоопределение-языка-браузера">Автоопределение языка браузера </h3>
+<p><strong>Файл: <code>src/middleware.ts</code></strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-import">import</span> createMiddleware <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/middleware'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token punctuation">{</span> routing <span class="token punctuation">}</span> <span class="token keyword keyword-from">from</span> <span class="token string">'./i18n/routing'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token function">createMiddleware</span><span class="token punctuation">(</span>routing<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-const">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+  matcher<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">'/(ru|en)/:path*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Как работает автоопределение:</strong></p>
+<ol>
+<li>Пользователь заходит на <code>/</code></li>
+<li>Middleware читает заголовок <code>Accept-Language</code> браузера</li>
+<li>Если язык браузера <code>ru-RU</code>, перенаправляет на <code>/ru</code></li>
+<li>Если язык браузера <code>en-US</code>, перенаправляет на <code>/en</code></li>
+<li>Если язык не поддерживается, использует <code>defaultLocale</code> (<code>en</code>)</li>
+</ol>
+<h3 id="настройка-matcher">Настройка matcher </h3>
+<p><strong>Основные паттерны:</strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-export">export</span> <span class="token keyword keyword-const">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+  matcher<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">'/'</span><span class="token punctuation">,</span>                      <span class="token comment">// Только корень</span>
+    <span class="token string">'/(ru|en)/:path*'</span><span class="token punctuation">,</span>        <span class="token comment">// Все страницы с локалью</span>
+    <span class="token string">'/((?!api|_next|.*\\.).*)'</span><span class="token punctuation">,</span> <span class="token comment">// Исключаем API и статику</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p><strong>📌 Замечания:</strong></p>
+<ul>
+<li>Middleware не применяется к <code>/api/*</code> роутам</li>
+<li>Middleware не применяется к статическим файлам (<code>/images/*</code>, <code>/*.png</code>)</li>
+<li><code>_next/</code> исключается автоматически</li>
+</ul>
+<hr>
+<h2 id="лучшие-практики">Лучшие практики </h2>
+<h3 id="1-структура-ключей">1. Структура ключей </h3>
+<p><strong>✅ Хорошо:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"AuthForm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"email"</span><span class="token operator">:</span> <span class="token string">"Email"</span><span class="token punctuation">,</span>
+    <span class="token property">"password"</span><span class="token operator">:</span> <span class="token string">"Password"</span><span class="token punctuation">,</span>
+    <span class="token property">"signIn"</span><span class="token operator">:</span> <span class="token string">"Sign In"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>❌ Плохо:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"btn1"</span><span class="token operator">:</span> <span class="token string">"Click me"</span><span class="token punctuation">,</span>
+  <span class="token property">"text_field_1"</span><span class="token operator">:</span> <span class="token string">"Enter data"</span><span class="token punctuation">,</span>
+  <span class="token property">"label_003"</span><span class="token operator">:</span> <span class="token string">"Submit"</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="2-переиспользование-переводов">2. Переиспользование переводов </h3>
+<p><strong>✅ Хорошо:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"common"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"save"</span><span class="token operator">:</span> <span class="token string">"Save"</span><span class="token punctuation">,</span>
+    <span class="token property">"cancel"</span><span class="token operator">:</span> <span class="token string">"Cancel"</span><span class="token punctuation">,</span>
+    <span class="token property">"delete"</span><span class="token operator">:</span> <span class="token string">"Delete"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"UserProfile"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"saveButton"</span><span class="token operator">:</span> <span class="token string">"Save"</span>  <span class="token comment">// Или используйте общий ключ</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'common'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'save'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h3 id="3-организация-больших-файлов">3. Организация больших файлов </h3>
+<p><strong>Для больших приложений разбивайте на модули:</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>messages/
+├── en/
+│   ├── common.json
+│   ├── auth.json
+│   ├── profile.json
+│   └── index.ts
+└── ru/
+    ├── common.json
+    ├── auth.json
+    ├── profile.json
+    └── index.ts
+</code></pre><p><strong>index.ts:</strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token keyword keyword-import">import</span> common <span class="token keyword keyword-from">from</span> <span class="token string">'./common.json'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> auth <span class="token keyword keyword-from">from</span> <span class="token string">'./auth.json'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> profile <span class="token keyword keyword-from">from</span> <span class="token string">'./profile.json'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>common<span class="token punctuation">,</span>
+  <span class="token operator">...</span>auth<span class="token punctuation">,</span>
+  <span class="token operator">...</span>profile<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><h3 id="4-typescript-типобезопасность">4. TypeScript типобезопасность </h3>
+<p><strong>Создайте типы для переводов:</strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">// types/i18n.ts</span>
+<span class="token keyword keyword-type">type</span> <span class="token class-name">Messages</span> <span class="token operator">=</span> <span class="token keyword keyword-typeof">typeof</span> <span class="token keyword keyword-import">import</span><span class="token punctuation">(</span><span class="token string">'../messages/en.json'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-declare">declare</span> global <span class="token punctuation">{</span>
+  <span class="token keyword keyword-interface">interface</span> <span class="token class-name">IntlMessages</span> <span class="token keyword keyword-extends">extends</span> <span class="token class-name">Messages</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Теперь будет автодополнение:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ✅ TypeScript знает все ключи</span>
+<span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'unknown'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ❌ TypeScript покажет ошибку</span>
+</code></pre><h3 id="5-fallback-значения">5. Fallback значения </h3>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Если ключ не найден, вернется сам ключ</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'missingKey'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>  <span class="token comment">// Выведет: "missingKey"</span>
+
+<span class="token comment">// Используйте опциональное значение</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">'Default Title'</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h3 id="6-тестирование-переводов">6. Тестирование переводов </h3>
+<p><strong>Проверьте, что все ключи существуют в обоих языках:</strong></p>
+<pre data-role="codeBlock" data-info="typescript" class="language-typescript typescript"><code><span class="token comment">// scripts/check-translations.ts</span>
+<span class="token keyword keyword-import">import</span> en <span class="token keyword keyword-from">from</span> <span class="token string">'../messages/en.json'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> ru <span class="token keyword keyword-from">from</span> <span class="token string">'../messages/ru.json'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-function">function</span> <span class="token function">compareKeys</span><span class="token punctuation">(</span>obj1<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> obj2<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> path <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-for">for</span> <span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> key <span class="token keyword keyword-in">in</span> obj1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> newPath <span class="token operator">=</span> path <span class="token operator">?</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token operator">:</span> key<span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword keyword-in">in</span> obj2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Missing key in RU: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>newPath<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token keyword keyword-typeof">typeof</span> obj1<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">compareKeys</span><span class="token punctuation">(</span>obj1<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> obj2<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> newPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">compareKeys</span><span class="token punctuation">(</span>en<span class="token punctuation">,</span> ru<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">compareKeys</span><span class="token punctuation">(</span>ru<span class="token punctuation">,</span> en<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><hr>
+<h2 id="типичные-ошибки-и-их-решения">Типичные ошибки и их решения </h2>
+<h3 id="ошибка-1-usetranslations-can-only-be-called-from-client-components">Ошибка 1: "useTranslations can only be called from Client Components" </h3>
+<p><strong>❌ Проблема:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token comment">// Server Component</span>
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">ServerComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Ошибка!</span>
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>✅ Решение:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token comment">// Вариант 1: Сделать Client Component</span>
+<span class="token string">'use client'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">ClientComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Вариант 2: Использовать серверную версию</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/server'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-async">async</span> <span class="token keyword keyword-function">function</span> <span class="token function">ServerComponent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token keyword keyword-await">await</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="ошибка-2-link-не-добавляет-префикс-локали">Ошибка 2: Link не добавляет префикс локали </h3>
+<p><strong>❌ Проблема:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token maybe-class-name">Link</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next/link'</span><span class="token punctuation">;</span>  <span class="token comment">// Неправильный импорт</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/puzzle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Go to Puzzle</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">// Результат: /puzzle (без /en/ или /ru/)</span>
+</code></pre><p><strong>✅ Решение:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Link</span> <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>  <span class="token comment">// Правильный импорт</span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/puzzle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Go to Puzzle</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token comment">// Результат: /en/puzzle или /ru/puzzle</span>
+</code></pre><h3 id="ошибка-3-переводы-не-обновляются">Ошибка 3: Переводы не обновляются </h3>
+<p><strong>❌ Проблема:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> translations <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Кешированное значение</span>
+<span class="token keyword keyword-const">const</span> title <span class="token operator">=</span> <span class="token function">translations</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>  <span class="token comment">// Не обновится при смене языка</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>✅ Решение:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>  <span class="token comment">// Обновится при смене языка</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="ошибка-4-отсутствует-setrequestlocale">Ошибка 4: Отсутствует setRequestLocale </h3>
+<p><strong>❌ Проблема:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token comment">// src/app/[locale]/page.tsx</span>
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Content</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// Warning: setRequestLocale missing</span>
+</code></pre><p><strong>✅ Решение:</strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> setRequestLocale <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl/server'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span> params <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> params<span class="token operator">:</span> <span class="token known-class-name class-name">Promise</span><span class="token operator">&lt;</span><span class="token punctuation">{</span> locale<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token operator">&gt;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span> locale <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">use</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">setRequestLocale</span><span class="token punctuation">(</span>locale<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ← Добавить это</span>
+  <span class="token keyword keyword-return">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Content</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="ошибка-5-неправильная-структура-json">Ошибка 5: Неправильная структура JSON </h3>
+<p><strong>❌ Проблема:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"HomePage.title"</span><span class="token operator">:</span> <span class="token string">"English Puzzle"</span><span class="token punctuation">,</span>  <span class="token comment">// Плоская структура</span>
+  <span class="token property">"HomePage.subtitle"</span><span class="token operator">:</span> <span class="token string">"Learn English"</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>✅ Решение:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"HomePage"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"English Puzzle"</span><span class="token punctuation">,</span>  <span class="token comment">// Вложенная структура</span>
+    <span class="token property">"subtitle"</span><span class="token operator">:</span> <span class="token string">"Learn English"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h2 id="примеры-из-приложения">Примеры из приложения </h2>
+<h3 id="пример-1-футер-с-переводами">Пример 1: Футер с переводами </h3>
+<p><strong>Файл: <code>src/components/footer/footer.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Link</span> <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports">styles</span> <span class="token keyword keyword-from">from</span> <span class="token string">'./footer.module.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'Footer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span><span class="token property-access">footer</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span><span class="token property-access">line</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>styles<span class="token punctuation">.</span>dev<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> bold</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'developedBy'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* "Developed with ❤️ by Olena Nevzorova" */</span><span class="token punctuation">}</span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> 
+          <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>https://github.com/olenaweb<span class="token punctuation">'</span></span> 
+          <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>_blank<span class="token punctuation">'</span></span>
+        <span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          - Github olenaweb
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>styles<span class="token punctuation">.</span><span class="token property-access">line2</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">RS School</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">2026</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Переводы:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token comment">// en.json</span>
+<span class="token punctuation">{</span>
+  <span class="token property">"Footer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"developedBy"</span><span class="token operator">:</span> <span class="token string">"Developed with ❤️ by Olena Nevzorova"</span><span class="token punctuation">,</span>
+    <span class="token property">"githubLink"</span><span class="token operator">:</span> <span class="token string">"GitHub"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ru.json</span>
+<span class="token punctuation">{</span>
+  <span class="token property">"Footer"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"developedBy"</span><span class="token operator">:</span> <span class="token string">"Разработано с ❤️ by Olena Nevzorova"</span><span class="token punctuation">,</span>
+    <span class="token property">"githubLink"</span><span class="token operator">:</span> <span class="token string">"GitHub"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="пример-2-хедер-с-условными-переводами">Пример 2: Хедер с условными переводами </h3>
+<p><strong>Файл: <code>src/components/Header/Header.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useAuth <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/context/auth-context'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Link</span><span class="token punctuation">,</span> useRouter <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">Header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'HomePage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span> user<span class="token punctuation">,</span> signOut <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useAuth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-const">const</span> <span class="token function-variable function">handleSignOut</span> <span class="token operator">=</span> <span class="token keyword keyword-async">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-try">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword keyword-await">await</span> <span class="token function">signOut</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">successToast</span><span class="token punctuation">(</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'goodbye'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "Goodbye!" или "До свидания!"</span>
+      router<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword keyword-catch">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">errorToast</span><span class="token punctuation">(</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'signOutError'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "Failed to sign out"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/logo.png<span class="token punctuation">'</span></span> <span class="token attr-name">alt</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'logoAlt'</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      
+      </span><span class="token punctuation">{</span>user <span class="token operator">?</span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> router<span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'MainPage'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* "Main Page" или "Главная Страница" */</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>handleSignOut<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'SignOutLabel'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* "Sign Out" или "Выйти" */</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token punctuation">(</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/auth/signin<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'SignInLabel'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* "Sign In" или "Войти" */</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Link</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>/auth/signup<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'SignUpLabel'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* "Sign Up" или "Зарегистрироваться" */</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Link</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="пример-3-контекст-с-переводами-ошибок">Пример 3: Контекст с переводами ошибок </h3>
+<p><strong>Файл: <code>src/context/auth-context.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> signInWithEmailAndPassword <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'firebase/auth'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> auth <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/lib/firebase/config'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> errorToast <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/lib/utils/toast-helpers'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-const">const</span> <span class="token function-variable function">AuthProvider</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> children <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> children<span class="token operator">:</span> <span class="token maybe-class-name">ReactNode</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'AuthForm'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Подготовка переведенных сообщений</span>
+  <span class="token keyword keyword-const">const</span> tAuthFailed <span class="token operator">=</span> t <span class="token operator">?</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'AuthFailed'</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token string">'Auth failed. Please try again.'</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> tFirebaseConfigError <span class="token operator">=</span> t <span class="token operator">?</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'firebaseConfigError'</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token string">'Firebase config error.'</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-const">const</span> <span class="token function-variable function">signIn</span> <span class="token operator">=</span> <span class="token keyword keyword-async">async</span> <span class="token punctuation">(</span>email<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> password<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-try">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword keyword-const">const</span> userCredential <span class="token operator">=</span> <span class="token keyword keyword-await">await</span> <span class="token function">signInWithEmailAndPassword</span><span class="token punctuation">(</span>auth<span class="token punctuation">,</span> email<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'User signed in successfully:'</span><span class="token punctuation">,</span> userCredential<span class="token punctuation">.</span><span class="token property-access">user</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword keyword-catch">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span><span class="token string">'Error signing in:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token comment">// Формирование переведенной ошибки</span>
+      <span class="token keyword keyword-let">let</span> translatedError<span class="token operator">:</span> <span class="token known-class-name class-name">AuthError</span> <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>
+        t 
+          <span class="token operator">?</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'signInFailed'</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>error <span class="token keyword keyword-as">as</span> <span class="token known-class-name class-name">Error</span><span class="token punctuation">)</span><span class="token operator">?.</span>message 
+          <span class="token operator">:</span> <span class="token string">'Sign in failed. Please try again.'</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>error <span class="token keyword keyword-as">as</span> <span class="token known-class-name class-name">Error</span><span class="token punctuation">)</span><span class="token operator">?.</span>message<span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span><span class="token string">'is not a function'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span>tFirebaseConfigError<span class="token punctuation">,</span> <span class="token punctuation">(</span>error <span class="token keyword keyword-as">as</span> <span class="token known-class-name class-name">Error</span><span class="token punctuation">)</span><span class="token operator">?.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        translatedError <span class="token operator">=</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>tFirebaseConfigError<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      
+      <span class="token keyword keyword-throw">throw</span> translatedError<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">AuthContext.Provider</span></span> <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> signIn<span class="token punctuation">,</span> <span class="token comment">/* ... */</span> <span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">AuthContext.Provider</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p><strong>Переводы:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token comment">// en.json</span>
+<span class="token punctuation">{</span>
+  <span class="token property">"AuthForm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"signInFailed"</span><span class="token operator">:</span> <span class="token string">"Sign in failed. Please try again."</span><span class="token punctuation">,</span>
+    <span class="token property">"firebaseConfigError"</span><span class="token operator">:</span> <span class="token string">"Firebase configuration is not correct"</span><span class="token punctuation">,</span>
+    <span class="token property">"AuthFailed"</span><span class="token operator">:</span> <span class="token string">"Auth failed. Please try again."</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// ru.json</span>
+<span class="token punctuation">{</span>
+  <span class="token property">"AuthForm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"signInFailed"</span><span class="token operator">:</span> <span class="token string">"Не удалось войти. Пожалуйста, попробуйте снова."</span><span class="token punctuation">,</span>
+    <span class="token property">"firebaseConfigError"</span><span class="token operator">:</span> <span class="token string">"Конфигурация Firebase некорректна."</span><span class="token punctuation">,</span>
+    <span class="token property">"AuthFailed"</span><span class="token operator">:</span> <span class="token string">"Не удалось аутентифицироваться. Пожалуйста, попробуйте снова."</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="пример-4-переключатель-языка">Пример 4: Переключатель языка </h3>
+<p><strong>Полный пример: <code>src/components/LocaleSwitcher/LocaleSwitcher.tsx</code></strong></p>
+<pre data-role="codeBlock" data-info="tsx" class="language-tsx tsx"><code><span class="token string">'use client'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">Locale</span><span class="token punctuation">,</span> useLocale<span class="token punctuation">,</span> useTranslations <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next-intl'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> useParams <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'next/navigation'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">ChangeEvent</span><span class="token punctuation">,</span> useTransition <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> usePathname<span class="token punctuation">,</span> useRouter <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/navigation'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports"><span class="token punctuation">{</span> routing <span class="token punctuation">}</span></span> <span class="token keyword keyword-from">from</span> <span class="token string">'@/i18n/routing'</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-import">import</span> <span class="token imports">classes</span> <span class="token keyword keyword-from">from</span> <span class="token string">'./LocaleSwitcher.module.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-export">export</span> <span class="token keyword keyword-default">default</span> <span class="token keyword keyword-function">function</span> <span class="token function">LocaleSwitcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Загрузка переводов для переключателя</span>
+  <span class="token keyword keyword-const">const</span> t <span class="token operator">=</span> <span class="token function">useTranslations</span><span class="token punctuation">(</span><span class="token string">'LocaleSwitcher'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Получение текущей локали</span>
+  <span class="token keyword keyword-const">const</span> defaultValue <span class="token operator">=</span> <span class="token function">useLocale</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Навигация с учетом i18n</span>
+  <span class="token keyword keyword-const">const</span> router <span class="token operator">=</span> <span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> pathname <span class="token operator">=</span> <span class="token function">usePathname</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-const">const</span> params <span class="token operator">=</span> <span class="token function">useParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// Переход без блокировки UI</span>
+  <span class="token keyword keyword-const">const</span> <span class="token punctuation">[</span>isPending<span class="token punctuation">,</span> startTransition<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useTransition</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword keyword-function">function</span> <span class="token function">onSelectChange</span><span class="token punctuation">(</span>event<span class="token operator">:</span> <span class="token maybe-class-name">ChangeEvent</span><span class="token operator">&lt;</span><span class="token maybe-class-name">HTMLSelectElement</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> nextLocale <span class="token operator">=</span> event<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token keyword keyword-as">as</span> <span class="token maybe-class-name">Locale</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// Меняем язык с сохранением текущего пути</span>
+    <span class="token function">startTransition</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      router<span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span>
+        <span class="token punctuation">{</span> pathname<span class="token punctuation">,</span> params <span class="token punctuation">}</span> <span class="token keyword keyword-as">as</span> <span class="token maybe-class-name">Parameters</span><span class="token operator">&lt;</span><span class="token keyword keyword-typeof">typeof</span> router<span class="token punctuation">.</span><span class="token property-access">replace</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span> locale<span class="token operator">:</span> nextLocale <span class="token punctuation">}</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword keyword-return">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>sr-only<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span><span class="token string">'label'</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* "Language" или "Язык" */</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span>
+        <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>locale-switcher<span class="token punctuation">'</span></span>
+        <span class="token attr-name">defaultValue</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>defaultValue<span class="token punctuation">}</span></span>
+        <span class="token attr-name">disabled</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>isPending<span class="token punctuation">}</span></span>
+        <span class="token attr-name">onChange</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>onSelectChange<span class="token punctuation">}</span></span>
+        <span class="token attr-name">className</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>classes<span class="token punctuation">.</span><span class="token property-access">select</span><span class="token punctuation">}</span></span>
+      <span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span>routing<span class="token punctuation">.</span><span class="token property-access">locales</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>locale<span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">key</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>locale<span class="token punctuation">}</span></span> <span class="token attr-name">value</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>locale<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span><span class="token function">t</span><span class="token punctuation">(</span>locale<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">  </span><span class="token punctuation">{</span><span class="token comment">/* "EN" или "RU" */</span><span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>Переводы:</strong></p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token comment">// en.json и ru.json (одинаковые)</span>
+<span class="token punctuation">{</span>
+  <span class="token property">"LocaleSwitcher"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"en"</span><span class="token operator">:</span> <span class="token string">"EN"</span><span class="token punctuation">,</span>
+    <span class="token property">"ru"</span><span class="token operator">:</span> <span class="token string">"RU"</span><span class="token punctuation">,</span>
+    <span class="token property">"label"</span><span class="token operator">:</span> <span class="token string">"Language"</span>  <span class="token comment">// "Language" в en.json, "Язык" в ru.json</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><hr>
+<h2 id="заключение">Заключение </h2>
+<h3 id="контрольный-список-для-нового-компонента-с-i18n">Контрольный список для нового компонента с i18n </h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Определите, Client или Server Component</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Импортируйте <code>useTranslations</code> из правильного модуля</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Создайте namespace в файлах переводов (<code>en.json</code>, <code>ru.json</code>)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Добавьте все необходимые ключи в оба файла</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Используйте <code>Link</code> и <code>useRouter</code> из <code>@/i18n/navigation</code></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Добавьте <code>setRequestLocale</code> если это страница</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Проверьте работу на обоих языках</li>
+</ul>
+<h3 id="полезные-ссылки">Полезные ссылки </h3>
+<ul>
+<li><a href="https://next-intl-docs.vercel.app/">next-intl Documentation</a></li>
+<li><a href="https://nextjs.org/docs/app/building-your-application/routing/internationalization">Next.js Internationalization</a></li>
+<li><a href="https://unicode-org.github.io/icu/userguide/format_parse/messages/">ICU Message Format</a></li>
+</ul>
+<h3 id="поддержка">Поддержка </h3>
+<p>Если у вас возникли вопросы:</p>
+<ol>
+<li>Проверьте эту документацию</li>
+<li>Изучите примеры в приложении</li>
+<li>Проверьте консоль браузера на ошибки</li>
+<li>Убедитесь, что все файлы переводов синхронизированы</li>
+</ol>
+<hr>
+<p><strong>Автор:</strong> Olena Nevzorova<br>
+<strong>Дата:</strong> 10 февраля 2026 г.<br>
+<strong>Версия:</strong> 1.0</p>
+</div>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

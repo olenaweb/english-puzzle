@@ -1,7 +1,73 @@
 {
-  "HomePage": {
-    "title": "Добро пожаловать",
-    "description": "Это главная страница"
+   "HomePage": {
+    "title": "Английская Головоломка",
+    "SignInLabel": "Войти",
+    "SignUpLabel": "Зарегистрироваться",
+    "SignOutLabel": "Выйти",
+    "MainPage": "Главная Страница",
+    "logoAlt": "логотип",
+    "welcomeUnauth": "Добро пожаловать!",
+    "welcomeAuth": "С возвращением, {user}!",
+    "defaultUser": "пользователь",
+    "welcomeClientLink": "Добро пожаловать в игру \"Английская Головоломка\"",
+    "clientNavLink": "Клиент",
+    "puzzleLink": "Головоломка",
+    "statisticsLink": "Статистика",
+    "signingOut": "Выход...",
+    "goodbye": "До свидания!",
+    "signOutError": "Не удалось выйти",
+    "generalInformation": " Это простое приложение, которое позволяет вам проверить свои навыки английского языка, решая головоломки. Вы можете войти, чтобы сохранить свой прогресс и получить доступ к дополнительным функциям. Наслаждайтесь игрой и улучшайте свой английский!"
+  },
+   "NotFoundPage": {
+    "title": "Page not found",
+    "sorry": "Sorry, the page you are looking for does not exist.",
+    "btn": "Return to Home"
+  },
+  "LocaleSwitcher": {
+    "en": "EN",
+    "ru": "RU",
+    "label": "Язык"
+  },
+  "Footer": {
+    "developedBy": "Разработано с ❤️ by Olena Nevzorova",
+    "githubLink": "GitHub"  
+  },
+  "AuthForm": {
+    "email": "Почта",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "signIn": "Войти",
+    "signUp": "Зарегистрироваться",
+    "submit": "Отправить",
+    "submitting": "Отправка...",
+    "showPassword": "Показать пароль",
+    "hidePassword": "Скрыть пароль",
+    "showConfirmPassword": "Показать подтверждение пароля",
+    "hideConfirmPassword": "Скрыть подтверждение пароля",
+    "signInTitle": "Войти в свой аккаунт",
+    "signUpTitle": "Создать аккаунт",
+    "validation": {
+      "emailRequired": "Почта обязательна",
+      "emailIncorrect": "Некорректная почта",
+      "passwordRequired": "Пароль обязателен",
+      "passwordMinLength": "Не менее 8 символов",
+      "passwordUppercase": "Необходима хотя бы одна заглавная буква",
+      "passwordLowercase": "Необходима хотя бы одна строчная буква",
+      "passwordDigit": "Необходима хотя бы одна цифра",
+      "passwordSpecial": "Необходим специальный символ @#$!^%*?&_-",
+      "passwordUnicode": "Должно быть в допустимом формате Unicode",
+      "confirmPasswordRequired": "Подтверждение пароля обязательно",
+      "passwordsMatch": "Пароли не совпадают"
+    },
+    "signingIn": "Вход...",
+    "welcomeBack": "С возвращением!",
+    "signInFailed": "Не удалось войти. Пожалуйста, попробуйте снова.",
+    "signUpFailed": "Не удалось зарегистрироваться. Пожалуйста, попробуйте снова.",
+    "signOutFailed": "Не удалось выйти. Пожалуйста, попробуйте снова.",
+    "registering": "Регистрация...",
+    "registrationSuccess": "Регистрация успешна! Добро пожаловать!",
+    "registrationFailed": "Не удалось зарегистрироваться. Пожалуйста, попробуйте снова.",
+    "firebaseConfigError": "Конфигурация Firebase некорректна. Пожалуйста, проверьте настройки.",
+    "AuthFailed": "Не удалось аутентифицироваться. Пожалуйста, попробуйте снова."
   }
 }
-
