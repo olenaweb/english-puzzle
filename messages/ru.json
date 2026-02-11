@@ -1,8 +1,8 @@
 {
-   "HomePage": {
+  "HomePage": {
     "title": "Английская Головоломка",
     "SignInLabel": "Войти",
-    "SignUpLabel": "Зарегистрироваться",
+    "SignUpLabel": "Регистрироваться",
     "SignOutLabel": "Выйти",
     "MainPage": "Главная Страница",
     "logoAlt": "логотип",
@@ -18,7 +18,7 @@
     "signOutError": "Не удалось выйти",
     "generalInformation": " Это простое приложение, которое позволяет вам проверить свои навыки английского языка, решая головоломки. Вы можете войти, чтобы сохранить свой прогресс и получить доступ к дополнительным функциям. Наслаждайтесь игрой и улучшайте свой английский!"
   },
-   "NotFoundPage": {
+  "NotFoundPage": {
     "title": "Page not found",
     "sorry": "Sorry, the page you are looking for does not exist.",
     "btn": "Return to Home"
@@ -30,7 +30,7 @@
   },
   "Footer": {
     "developedBy": "Разработано с ❤️ by Olena Nevzorova",
-    "githubLink": "GitHub"  
+    "githubLink": "GitHub"
   },
   "AuthForm": {
     "email": "Почта",

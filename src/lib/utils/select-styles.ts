@@ -54,6 +54,7 @@ export function getCustomSelectStyles<T>(): StylesConfig<T, false> {
     }),
     menu: (provided) => ({
       ...provided,
+      width: '80px',
       borderRadius: '6px',
       overflow: 'hidden',
       border: '2px solid var(--detail-color)',
