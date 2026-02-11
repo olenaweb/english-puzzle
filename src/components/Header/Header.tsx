@@ -1,6 +1,6 @@
 'use client';
 
-import LocaleSwitcher from '@/components/LocaleSwitcher';
+import LocaleSwitcher from '@/components/locale-switcher';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -12,7 +12,7 @@ import classes from './Header.module.css';
 import { useAuth } from '@/context/auth-context';
 import toast from 'react-hot-toast';
 import { successToast, errorToast } from '@/lib/utils/toast-helpers';
-import NavLinks from '../NavLinks/NavLinks';
+import NavLinks from '../nav-links/nav-links';
 
 export default function Header() {
   const t = useTranslations('HomePage');
@@ -47,7 +47,7 @@ export default function Header() {
     <header className={`${classes.header} ${scrolled ? classes.scrolled : ''}`}>
       <nav className={`container ${classes['flex-wrapper']}`}>
         <Link href='/' className={classes['logo-wrapper'] + ' active-link'}>
-          <Image src='/logo.png' alt={t('logoAlt')} width={60} height={60} priority={true} />
+          <Image src='/logo.jpg' alt={t('logoAlt')} width={120} height={100} priority={true} />
         </Link>
 
         {user && (
@@ -57,7 +57,6 @@ export default function Header() {
         )}
 
         <div className={classes.controls}>
-          <LocaleSwitcher />
           {!loading && (
             <>
               {user ? (
@@ -81,6 +80,7 @@ export default function Header() {
               )}
             </>
           )}
+          <LocaleSwitcher />
         </div>
       </nav>
     </header>

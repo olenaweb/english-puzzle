@@ -16,12 +16,12 @@
   --background-color: rgb(214 214 212);
   --color: #0a0a0a;
   --white-color: #fff;
-  --detail-color: rgb(7 89 161);
-  --dark-detail-color: rgb(3 57 105);
+  --detail-color: rgb(104, 109, 4);
+  --dark-detail-color: rgb(88, 88, 85);
   --disabled-color: rgb(128 128 128 / 73.1%);
   --light-disabled-color: rgb(211 211 211 / 73.1%);
   --red-color: rgb(161 7 7);
-  --header-footer-color: rgb(156 200 239);
+  --header-footer-color: rgb(162, 165, 168);
   --outline-color: #e6dede;
   --dark-gray-color: #666;
   --status-ok-color: #199a48;
@@ -171,6 +171,7 @@ input,
 select,
 select option {
   font-size: clamp(0.875rem, 0.7788rem + 0.3846vw, 1.125rem);
+  font-weight: 600;
 }
 
 input::placeholder {
@@ -178,8 +179,18 @@ input::placeholder {
   opacity: 1;
 }
 
-select {
+select option {
   padding: 0.1rem 1rem;
+  color: rgb(75, 79, 2);
+  font-weight: 600;
+  background-color: var(--outline-color);
+  accent-color: var(--detail-color);
+}
+
+select option:focus {
+  outline: 2px solid var(--detail-color);
+  outline-offset: 2px;
+  border-color: var(--detail-color);
 }
 
 :focus:not(:focus-visible) {

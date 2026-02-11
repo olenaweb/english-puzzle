@@ -21,7 +21,6 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
-
   width: 100%;
 }
 
@@ -42,16 +41,11 @@
   width: 100%;
 }
 
-.school {
-  justify-self: left;
+.link {
   margin: 0;
-}
-
-.rss {
-  place-self: center center;
-  width: 32px;
-  height: 32px;
-  margin: 0;
+  font-size: clamp(0.875rem, 0.7308rem + 0.5769vw, 1.25rem);
+  font-weight: 600;
+  color: var(--color);
 }
 
 @media (width <= 480px) {

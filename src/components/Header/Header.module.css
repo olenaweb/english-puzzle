@@ -66,6 +66,9 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  overflow: hidden;
 }
 
 @media (width <= 700px) {

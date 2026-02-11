@@ -2,7 +2,7 @@
 
 import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
-import classes from './NavLinks.module.css';
+import classes from './nav-links.module.css';
 
 export default function NavLinks() {
   const t = useTranslations('HomePage');
