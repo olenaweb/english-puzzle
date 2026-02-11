@@ -19,10 +19,14 @@ type OptionType = {
 export default function LocaleSwitcher() {
   const t = useTranslations('LocaleSwitcher');
   const currentLocale = useLocale();
+  console.log(' useLocale= ', currentLocale);
   const router = useRouter();
+  console.log('"useRouter router="', router);
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
+  console.log('"usePathname pathname="', pathname);
   const params = useParams();
+  console.log('"useParams params="', params);
 
   const options: OptionType[] = routing.locales.map((locale) => ({
     value: locale,
@@ -43,9 +47,6 @@ export default function LocaleSwitcher() {
 
   return (
     <div className={classes.container}>
-      <label htmlFor='locale-switcher' className='sr-only'>
-        {t('label')}
-      </label>
       <Select<OptionType>
         id='locale-switcher'
         instanceId='locale-switcher'

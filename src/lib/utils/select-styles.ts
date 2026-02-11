@@ -11,7 +11,7 @@ export function getCustomSelectStyles<T>(): StylesConfig<T, false> {
       height: '30px',
       minHeight: '30px',
       // added fixed width to prevent resizing when options have different label lengths
-      width: '80px',
+      width: '90px',
       padding: '0 0.5rem',
       border: `2px solid ${state.isFocused ? 'var(--detail-color)' : 'var(--detail-color)'}`,
       borderRadius: '6px',
@@ -54,7 +54,7 @@ export function getCustomSelectStyles<T>(): StylesConfig<T, false> {
     }),
     menu: (provided) => ({
       ...provided,
-      width: '80px',
+      width: '90px',
       borderRadius: '6px',
       overflow: 'hidden',
       border: '2px solid var(--detail-color)',

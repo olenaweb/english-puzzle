@@ -1,0 +1,311 @@
+<!DOCTYPE html><html><head>
+      <title>next-cache-guide</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Olena\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="папка-next-в-nextjs---полное-руководство">Папка <code>.next</code> в Next.js - Полное руководство </h1>
+<h2 id="что-это-такое">Что это такое? </h2>
+<p><code>.next</code> — это служебная папка, которую автоматически создает Next.js при запуске проекта. Она содержит:</p>
+<ul>
+<li><strong>Скомпилированный код</strong> вашего приложения</li>
+<li><strong>Кеш сборки</strong> для ускорения повторных запусков</li>
+<li><strong>Оптимизированные файлы</strong> для production</li>
+<li><strong>Сгенерированные типы TypeScript</strong> (например, <code>routes.d.ts</code>)</li>
+<li><strong>Метаданные страниц и маршрутов</strong></li>
+</ul>
+<h2 id="структура-папки-next">Структура папки <code>.next</code> </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>.next/
+├── cache/              # Кеш для оптимизации сборки
+├── server/             # Серверный код (Server Components)
+├── static/             # Статические файлы и чанки
+├── types/              # Автогенерируемые типы TypeScript
+├── dev/                # Файлы для development режима
+│   └── types/          # Типы для разработки
+└── trace               # Данные для трассировки и отладки
+</code></pre><h2 id="для-чего-нужна">Для чего нужна? </h2>
+<h3 id="1-ускорение-разработки">1. <strong>Ускорение разработки</strong> </h3>
+<ul>
+<li>Кеширует результаты компиляции</li>
+<li>Не перекомпилирует неизменившиеся файлы</li>
+<li>Сокращает время hot reload</li>
+</ul>
+<h3 id="2-оптимизация-production-сборки">2. <strong>Оптимизация production сборки</strong> </h3>
+<ul>
+<li>Минификация и бандлинг кода</li>
+<li>Tree-shaking (удаление неиспользуемого кода)</li>
+<li>Code splitting (разделение на чанки)</li>
+</ul>
+<h3 id="3-генерация-типов">3. <strong>Генерация типов</strong> </h3>
+<ul>
+<li>Автоматически создает типы для маршрутов</li>
+<li>Типы для API routes</li>
+<li>Типы для динамических импортов</li>
+</ul>
+<h3 id="4-turbopack-кеш-nextjs-13">4. <strong>Turbopack кеш</strong> (Next.js 13+) </h3>
+<ul>
+<li>Хранит промежуточные результаты компиляции Rust-based Turbopack</li>
+<li>База данных SST файлов для инкрементальной компиляции</li>
+</ul>
+<h2 id="когда-нужно-очищать-кеш">Когда нужно очищать кеш? </h2>
+<h3 id="-обязательные-случаи">✅ Обязательные случаи: </h3>
+<ol>
+<li>
+<p><strong>Странные ошибки компиляции</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Error: Module not found
+Cannot find module './component'
+</code></pre></li>
+<li>
+<p><strong>Изменения не применяются</strong></p>
+<ul>
+<li>Код изменился, но на странице старая версия</li>
+<li>Hot reload не работает</li>
+</ul>
+</li>
+<li>
+<p><strong>Ошибки TypeScript с путями</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Cannot find name 'routes'
+Module augmentation error
+</code></pre></li>
+<li>
+<p><strong>Ошибки Turbopack</strong> (в Next.js 16+)</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Failed to lookup task type
+Unable to open static sorted file
+</code></pre></li>
+<li>
+<p><strong>После обновления Next.js</strong></p>
+<ul>
+<li>Новая версия может изменить структуру кеша</li>
+</ul>
+</li>
+<li>
+<p><strong>Проблемы с environment variables</strong></p>
+<ul>
+<li><code>.env</code> файлы не подхватываются</li>
+</ul>
+</li>
+<li>
+<p><strong>После изменения конфигурации</strong></p>
+<ul>
+<li>Изменили <code>next.config.ts</code></li>
+<li>Изменили <code>tsconfig.json</code></li>
+<li>Добавили новые middleware/proxy</li>
+</ul>
+</li>
+</ol>
+<h3 id="️-рекомендуемые-случаи">⚠️ Рекомендуемые случаи: </h3>
+<ul>
+<li>Перед деплоем на production</li>
+<li>После смены ветки git с большими изменениями</li>
+<li>При конфликтах после git merge</li>
+<li>Если dev-сервер ведет себя странно</li>
+</ul>
+<h2 id="как-очистить-кеш">Как очистить кеш? </h2>
+<h3 id="способ-1-вручную-удалить-папку">Способ 1: Вручную удалить папку </h3>
+<p><strong>PowerShell (Windows):</strong></p>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token function">Remove-Item</span> <span class="token operator">-</span>Recurse <span class="token operator">-</span>Force <span class="token punctuation">.</span>next
+</code></pre><p><strong>Terminal (macOS/Linux):</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">rm</span> <span class="token parameter variable">-rf</span> .next
+</code></pre><h3 id="способ-2-через-npm-скрипт">Способ 2: Через npm скрипт </h3>
+<p>Добавьте в <code>package.json</code>:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"clean"</span><span class="token operator">:</span> <span class="token string">"rm -rf .next"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev:clean"</span><span class="token operator">:</span> <span class="token string">"npm run clean &amp;&amp; npm run dev"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>Затем:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">npm</span> run clean
+<span class="token function">npm</span> run dev
+</code></pre><h3 id="способ-3-с-остановкой-процессов-windows">Способ 3: С остановкой процессов (Windows) </h3>
+<p>Если файлы заблокированы:</p>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token comment"># Останавливаем все процессы Node.js</span>
+taskkill <span class="token operator">/</span>F <span class="token operator">/</span>IM node<span class="token punctuation">.</span>exe
+
+<span class="token comment"># Ждем 2-3 секунды</span>
+<span class="token function">Start-Sleep</span> <span class="token operator">-</span>Seconds 3
+
+<span class="token comment"># Удаляем кеш</span>
+<span class="token function">Remove-Item</span> <span class="token operator">-</span>Recurse <span class="token operator">-</span>Force <span class="token punctuation">.</span>next
+
+<span class="token comment"># Запускаем заново</span>
+npm run dev
+</code></pre><h3 id="способ-4-полная-очистка-включая-node_modules">Способ 4: Полная очистка (включая node_modules) </h3>
+<p>Если проблема серьезная:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Удаляем все</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> .next node_modules package-lock.json
+
+<span class="token comment"># Переустанавливаем зависимости</span>
+<span class="token function">npm</span> <span class="token function">install</span>
+
+<span class="token comment"># Запускаем</span>
+<span class="token function">npm</span> run dev
+</code></pre><h2 id="что-происходит-после-очистки">Что происходит после очистки? </h2>
+<ol>
+<li>
+<p><strong>При следующем запуске</strong> <code>npm run dev</code>:</p>
+<ul>
+<li>Next.js создаст папку <code>.next</code> заново</li>
+<li>Произойдет полная компиляция (займет больше времени)</li>
+<li>Сгенерируются все типы и маршруты</li>
+</ul>
+</li>
+<li>
+<p><strong>Временно могут появиться ошибки TypeScript</strong>:</p>
+<ul>
+<li>Это нормально - типы еще не сгенерированы</li>
+<li>Исчезнут после завершения первой компиляции</li>
+</ul>
+</li>
+<li>
+<p><strong>Dev-сервер запустится дольше</strong>:</p>
+<ul>
+<li>Первый запуск без кеша всегда медленнее</li>
+<li>Последующие запуски будут быстрыми</li>
+</ul>
+</li>
+</ol>
+<h2 id="нужно-ли-добавлять-next-в-gitignore">Нужно ли добавлять <code>.next</code> в <code>.gitignore</code>? </h2>
+<p><strong>✅ ДА!</strong> Эта папка всегда должна быть в <code>.gitignore</code>:</p>
+<pre data-role="codeBlock" data-info="gitignore" class="language-gitignore gitignore"><code><span class="token comment"># Next.js</span>
+<span class="token entry string">.next<span class="token punctuation">/</span></span>
+<span class="token entry string">out<span class="token punctuation">/</span></span>
+<span class="token entry string">build<span class="token punctuation">/</span></span>
+
+<span class="token comment"># Next.js cache</span>
+<span class="token entry string">.next<span class="token punctuation">/</span>cache<span class="token punctuation">/</span></span>
+</code></pre><h3 id="почему">Почему? </h3>
+<ul>
+<li><strong>Генерируется автоматически</strong> - не нужно хранить в репозитории</li>
+<li><strong>Зависит от окружения</strong> - у каждого разработчика своя версия</li>
+<li><strong>Большой размер</strong> - замедлит работу с git</li>
+<li><strong>Может содержать sensitive data</strong> - environment variables</li>
+</ul>
+<h2 id="production-сборка">Production сборка </h2>
+<p>Для production используется команда:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">npm</span> run build
+</code></pre><p>Это создает оптимизированную версию в <code>.next</code>, которая:</p>
+<ul>
+<li>Минифицирована</li>
+<li>Оптимизирована для производительности</li>
+<li>Содержит только необходимый код</li>
+</ul>
+<p>После билда запускается сервер:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">npm</span> start
+</code></pre><h2 id="дополнительные-команды-очистки">Дополнительные команды очистки </h2>
+<h3 id="nextjs-встроенная-команда-экспериментальная">Next.js встроенная команда (экспериментальная): </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>npx next clean
+</code></pre><p>Эта команда:</p>
+<ul>
+<li>Удаляет <code>.next</code> папку</li>
+<li>Очищает SWC кеш</li>
+<li>Безопасно работает на всех платформах</li>
+</ul>
+<h2 id="лучшие-практики">Лучшие практики </h2>
+<ol>
+<li>
+<p><strong>Не коммитьте <code>.next</code> в git</strong></p>
+<ul>
+<li>Всегда в <code>.gitignore</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Очищайте кеш регулярно</strong></p>
+<ul>
+<li>Раз в неделю при активной разработке</li>
+<li>После каждого обновления Next.js</li>
+</ul>
+</li>
+<li>
+<p><strong>Автоматизируйте очистку</strong></p>
+<ul>
+<li>Создайте npm скрипты</li>
+<li>Используйте в CI/CD пайплайнах</li>
+</ul>
+</li>
+<li>
+<p><strong>При проблемах - сначала очистите кеш</strong></p>
+<ul>
+<li>Это решает 80% странных ошибок</li>
+<li>Быстрее, чем искать причину</li>
+</ul>
+</li>
+<li>
+<p><strong>В CI/CD всегда чистая сборка</strong></p>
+<pre data-role="codeBlock" data-info="yaml" class="language-yaml yaml"><code><span class="token comment"># GitHub Actions пример</span>
+<span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Build
+  <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+    rm -rf .next
+    npm run build</span>
+</code></pre></li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting </h2>
+<h3 id="проблема-не-удается-удалить-next---файл-занят">Проблема: "Не удается удалить .next - файл занят" </h3>
+<p><strong>Решение:</strong></p>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell powershell"><code><span class="token comment"># Windows</span>
+taskkill <span class="token operator">/</span>F <span class="token operator">/</span>IM node<span class="token punctuation">.</span>exe
+<span class="token function">Start-Sleep</span> <span class="token operator">-</span>Seconds 2
+<span class="token function">Remove-Item</span> <span class="token operator">-</span>Recurse <span class="token operator">-</span>Force <span class="token punctuation">.</span>next
+
+<span class="token comment"># macOS/Linux</span>
+killall node
+<span class="token function">sleep</span> 2
+<span class="token function">rm</span> <span class="token operator">-</span>rf <span class="token punctuation">.</span>next
+</code></pre><h3 id="проблема-после-очистки-приложение-не-запускается">Проблема: "После очистки приложение не запускается" </h3>
+<p><strong>Решение:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># 1. Полная очистка</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> .next node_modules
+
+<span class="token comment"># 2. Проверьте package.json на ошибки</span>
+<span class="token function">npm</span> <span class="token function">install</span>
+
+<span class="token comment"># 3. Запустите</span>
+<span class="token function">npm</span> run dev
+</code></pre><h3 id="проблема-typescript-ошибки-после-очистки">Проблема: "TypeScript ошибки после очистки" </h3>
+<p><strong>Решение:</strong></p>
+<ul>
+<li>Подождите 30-60 секунд после запуска</li>
+<li>Перезагрузите VS Code (Cmd/Ctrl + Shift + P → "Reload Window")</li>
+<li>Перезапустите TypeScript Server (Cmd/Ctrl + Shift + P → "Restart TS Server")</li>
+</ul>
+<h2 id="заключение">Заключение </h2>
+<p>Папка <code>.next</code> - это временное хранилище, которое:</p>
+<ul>
+<li>Ускоряет разработку через кеширование</li>
+<li>Автоматически создается и управляется Next.js</li>
+<li>Безопасно удаляется при возникновении проблем</li>
+<li>Не должна храниться в git</li>
+</ul>
+<p><strong>Золотое правило:</strong> При любых странностях - очистите <code>.next</code> и перезапустите dev-сервер! 🚀</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

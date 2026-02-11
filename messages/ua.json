@@ -1,0 +1,73 @@
+{
+  "HomePage": {
+    "title": "Англійська Головоломка",
+    "SignInLabel": "Увійти",
+    "SignUpLabel": "Зареєструватися",
+    "SignOutLabel": "Вийти",
+    "MainPage": "Головна Сторінка",
+    "logoAlt": "логотип",
+    "welcomeUnauth": "Ласкаво просимо!",
+    "welcomeAuth": "З поверненням, {user}!",
+    "defaultUser": "користувач",
+    "welcomeClientLink": "Ласкаво просимо до гри \"Англійська Головоломка\"",
+    "clientNavLink": "Клієнт",
+    "puzzleLink": "Головоломка",
+    "statisticsLink": "Статистика",
+    "signingOut": "Вихід...",
+    "goodbye": "До побачення!",
+    "signOutError": "Не вдалося вийти",
+    "generalInformation": " Це простий застосунок, який дозволяє вам перевірити свої навички англійської мови, розв'язуючи головоломки. Ви можете увійти, щоб зберегти свій прогрес та отримати доступ до додаткових функцій. Насолоджуйтесь грою та покращуйте свою англійську!"
+  },
+  "NotFoundPage": {
+    "title": "Сторінка не знайдена",
+    "sorry": "Вибачте, сторінка, яку ви шукаєте, не існує.",
+    "btn": "Повернутися на головну"
+  },
+  "LocaleSwitcher": {
+    "en": "EN",
+    "ua": "УКР",
+    "ru": "РУ"
+  },
+  "Footer": {
+    "developedBy": "Розроблено з ❤️ by Olena Nevzorova",
+    "githubLink": "GitHub"
+  },
+  "AuthForm": {
+    "email": "Пошта",
+    "password": "Пароль",
+    "confirmPassword": "Підтвердіть пароль",
+    "signIn": "Увійти",
+    "signUp": "Зареєструватися",
+    "submit": "Надіслати",
+    "submitting": "Надсилання...",
+    "showPassword": "Показати пароль",
+    "hidePassword": "Сховати пароль",
+    "showConfirmPassword": "Показати підтвердження пароля",
+    "hideConfirmPassword": "Сховати підтвердження пароля",
+    "signInTitle": "Увійти до свого акаунту",
+    "signUpTitle": "Створити акаунт",
+    "validation": {
+      "emailRequired": "Пошта обов'язкова",
+      "emailIncorrect": "Некоректна пошта",
+      "passwordRequired": "Пароль обов'язковий",
+      "passwordMinLength": "Не менше 8 символів",
+      "passwordUppercase": "Необхідна хоча б одна велика літера",
+      "passwordLowercase": "Необхідна хоча б одна маленька літера",
+      "passwordDigit": "Необхідна хоча б одна цифра",
+      "passwordSpecial": "Необхідний спеціальний символ @#$!^%*?&_-",
+      "passwordUnicode": "Має бути у допустимому форматі Unicode",
+      "confirmPasswordRequired": "Підтвердження пароля обов'язкове",
+      "passwordsMatch": "Паролі не співпадають"
+    },
+    "signingIn": "Вхід...",
+    "welcomeBack": "З поверненням!",
+    "signInFailed": "Не вдалося увійти. Будь ласка, спробуйте ще раз.",
+    "signUpFailed": "Не вдалося зареєструватися. Будь ласка, спробуйте ще раз.",
+    "signOutFailed": "Не вдалося вийти. Будь ласка, спробуйте ще раз.",
+    "registering": "Реєстрація...",
+    "registrationSuccess": "Реєстрація успішна! Ласкаво просимо!",
+    "registrationFailed": "Не вдалося зареєструватися. Будь ласка, спробуйте ще раз.",
+    "firebaseConfigError": "Конфігурація Firebase некоректна. Будь ласка, перевірте налаштування.",
+    "AuthFailed": "Не вдалося автентифікуватися. Будь ласка, спробуйте ще раз."
+  }
+}

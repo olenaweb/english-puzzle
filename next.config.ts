@@ -2,9 +2,10 @@ import type { NextConfig } from 'next';
 import { execSync } from 'child_process';
 import createNextIntlPlugin from 'next-intl/plugin';
 
-const logDisabled = process.env.NEXT_PUBLIC_LOGGING_ENABLED
-  ? process.env.NEXT_PUBLIC_LOGGING_ENABLED !== 'true'
-  : true;
+// В development режиме логи всегда включены
+// В production можно отключить через NEXT_PUBLIC_DISABLE_CONSOLE=true
+const shouldRemoveConsole =
+  process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_DISABLE_CONSOLE === 'true';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -14,7 +15,7 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_BUILD_TIMESTAMP: new Date().toUTCString(),
   },
   compiler: {
-    removeConsole: logDisabled,
+    removeConsole: shouldRemoveConsole,
   },
   turbopack: {
     root: __dirname,
