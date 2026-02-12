@@ -41,7 +41,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       unsubscribe = onIdTokenChanged(auth, async (firebaseUser) => {
-        console.log('Firebase auth state changed:', firebaseUser);
+        if (process.env.NODE_ENV === 'development') {
+          console.log('Firebase auth state changed:', firebaseUser);
+        }
 
         setUser(firebaseUser);
 
@@ -55,11 +57,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         }
       });
     } catch (error) {
-      console.log('Firebase auth error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Firebase auth error:', error);
+      }
       setLoading(false);
       let translatedError = tAuthFailed;
       if ((error as Error)?.message.includes('is not a function')) {
-        console.error(tFirebaseConfigError, (error as Error)?.message);
+        if (process.env.NODE_ENV === 'development') {
+          console.error(tFirebaseConfigError, (error as Error)?.message);
+        }
         translatedError = tFirebaseConfigError;
       }
       errorToast(translatedError);
@@ -74,14 +80,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const signUp = async (email: string, password: string) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log('User signed up successfully:', userCredential.user);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('User signed up successfully:', userCredential.user);
+      }
     } catch (error) {
-      console.error('Error signing Up:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error signing Up:', error);
+      }
       let translatedError: AuthError = new Error(
         t ? t('signUpFailed') + (error as Error)?.message : 'Sign Up failed. Please try again.',
       );
       if ((error as Error)?.message.includes('is not a function')) {
-        console.error(tFirebaseConfigError, (error as Error)?.message);
+        if (process.env.NODE_ENV === 'development') {
+          console.error(tFirebaseConfigError, (error as Error)?.message);
+        }
         translatedError = new Error(tFirebaseConfigError);
       }
       translatedError.originalError = error;
@@ -92,14 +104,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const signIn = async (email: string, password: string) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log('User signed in successfully:', userCredential.user);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('User signed in successfully:', userCredential.user);
+      }
     } catch (error) {
-      console.error('Error signing in:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error signing in:', error);
+      }
       let translatedError: AuthError = new Error(
         t ? t('signInFailed') + (error as Error)?.message : 'Sign in failed. Please try again.',
       );
       if ((error as Error)?.message.includes('is not a function')) {
-        console.error(tFirebaseConfigError, (error as Error)?.message);
+        if (process.env.NODE_ENV === 'development') {
+          console.error(tFirebaseConfigError, (error as Error)?.message);
+        }
         translatedError = new Error(tFirebaseConfigError);
       }
       translatedError.originalError = error;
@@ -111,14 +129,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       setIsSigningOut(true);
       await firebaseSignOut(auth);
-      console.log('User signed out successfully');
+      if (process.env.NODE_ENV === 'development') {
+        console.log('User signed out successfully');
+      }
     } catch (error) {
-      console.error('Error signing out:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error signing out:', error);
+      }
       let translatedError: AuthError = new Error(
         t ? t('signOutFailed') + (error as Error)?.message : 'Sign out failed. Please try again.',
       );
       if ((error as Error)?.message.includes('is not a function')) {
-        console.error(tFirebaseConfigError, (error as Error)?.message);
+        if (process.env.NODE_ENV === 'development') {
+          console.error(tFirebaseConfigError, (error as Error)?.message);
+        }
         translatedError = new Error(tFirebaseConfigError);
       }
       translatedError.originalError = error;

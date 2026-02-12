@@ -19,14 +19,14 @@ type OptionType = {
 export default function LocaleSwitcher() {
   const t = useTranslations('LocaleSwitcher');
   const currentLocale = useLocale();
-  console.log(' useLocale= ', currentLocale);
+  // console.log(' useLocale= ', currentLocale);
   const router = useRouter();
-  console.log('"useRouter router="', router);
+  // console.log('"useRouter router="', router);
   const [isPending, startTransition] = useTransition();
   const pathname = usePathname();
-  console.log('"usePathname pathname="', pathname);
+  // console.log('"usePathname pathname="', pathname);
   const params = useParams();
-  console.log('"useParams params="', params);
+  // console.log('"useParams params="', params);
 
   const options: OptionType[] = routing.locales.map((locale) => ({
     value: locale,
