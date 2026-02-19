@@ -29,7 +29,7 @@
     "ru": "РУ"
   },
   "Footer": {
-    "developedBy": "Разработано с ❤️ by Olena Nevzorova",
+    "developedBy": "Разработано с ❤️ Оленой Невзоровой",
     "githubLink": "GitHub"
   },
   "AuthForm": {
@@ -69,5 +69,15 @@
     "registrationFailed": "Не удалось зарегистрироваться. Пожалуйста, попробуйте снова.",
     "firebaseConfigError": "Конфигурация Firebase некорректна. Пожалуйста, проверьте настройки.",
     "AuthFailed": "Не удалось аутентифицироваться. Пожалуйста, попробуйте снова."
+  },
+  "WelcomePage": {
+    "title": "Английская Головоломка",
+    "welcomeAuth": "С возвращением, {user}!",
+    "letsGoPuzzle": "Давайте перейдем к головоломке",
+    "chooseLevelTitle": "Выберите уровень",
+    "rounds": "{count} раундов",
+    "noLevelsAvailable": "Уровни в данный момент недоступны",
+    "tryAgainLater": "Пожалуйста, попробуйте позже",
+    "DATA_GET_ERROR": "Ошибка загрузки данных. Проверьте подключение."
   }
 }

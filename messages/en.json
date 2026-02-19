@@ -69,5 +69,19 @@
     "registrationFailed": "Registration failed. Please try again.",
     "firebaseConfigError": "Firebase configuration is not correct",
     "AuthFailed": "Auth failed. Please try again."
+  },
+  "serverMessages": {
+    "STATISTICS_LOG_ADD_ERROR": "Error adding log",
+    "DATA_GET_ERROR": "Error getting data"
+  },
+  "WelcomePage": {
+    "title": "English Puzzle",
+    "welcomeAuth": "Welcome back, {user}!",
+    "letsGoPuzzle": "Let's go to the puzzle",
+    "chooseLevelTitle": "Choose Your Level",
+    "rounds": "{count} rounds",
+    "noLevelsAvailable": "No levels available at the moment",
+    "tryAgainLater": "Please try again later",
+    "DATA_GET_ERROR": "Error loading data. Please check your connection."
   }
 }

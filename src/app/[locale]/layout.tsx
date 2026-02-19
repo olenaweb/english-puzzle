@@ -4,8 +4,8 @@ import { setRequestLocale } from 'next-intl/server';
 import { getMessages } from 'next-intl/server';
 import Footer from '@/components/footer/footer';
 import { routing } from '@/i18n/routing';
-import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
-import Header from '@/components/Header';
+import ErrorBoundary from '@/components/error-boundary/error-boundary';
+import Header from '@/components/header';
 import { AuthProvider } from '@/context/auth-context';
 import { ClientProviders } from '@/components/providers/client-providers';
 

@@ -7,10 +7,10 @@ export default function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.line}>
-        <p className={`${styles.dev} bold `}>{t('developedBy')}</p>
+        <p className={`${styles.dev}`}>{t('developedBy')}</p>
       </div>
       <div className={styles.line2}>
-        <p className={`${styles.link} bold `}>2026</p>
+        <p className={`${styles.year} bold `}>2026</p>
         <Link
           href='https://github.com/olenaweb'
           className={`${styles.link} bold `}

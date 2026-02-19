@@ -8,15 +8,15 @@ export function getCustomSelectStyles<T>(): StylesConfig<T, false> {
   return {
     control: (provided, state) => ({
       ...provided,
-      height: '30px',
-      minHeight: '30px',
+      height: '25px',
+      minHeight: '25px',
       // added fixed width to prevent resizing when options have different label lengths
       width: '90px',
-      padding: '0 0.5rem',
+      padding: '0 0.5rem 1.8rem',
       border: `2px solid ${state.isFocused ? 'var(--detail-color)' : 'var(--detail-color)'}`,
       borderRadius: '6px',
       backgroundColor: 'var(--outline-color)',
-      fontSize: 'clamp(0.875rem, 0.7788rem + 0.3846vw, 1.125rem)',
+      fontSize: 'clamp(0.875rem, 0.7788rem + 0.3846vw, 1rem)',
       fontWeight: 600,
       color: 'rgb(75, 79, 2)',
       cursor: 'pointer',
@@ -75,7 +75,7 @@ export function getCustomSelectStyles<T>(): StylesConfig<T, false> {
       fontWeight: state.isSelected ? 700 : 600,
       cursor: 'pointer',
       padding: '8px 12px',
-      fontSize: 'clamp(0.875rem, 0.7788rem + 0.3846vw, 1.125rem)',
+      fontSize: 'clamp(0.875rem, 0.7788rem + 0.3846vw, 1rem)',
       '&:active': {
         backgroundColor: 'var(--detail-color)',
       },

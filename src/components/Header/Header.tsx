@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 import { Link, useRouter } from '@/i18n/navigation';
 
-import classes from './Header.module.css';
+import classes from './header.module.css';
 
 import { useAuth } from '@/context/auth-context';
 import toast from 'react-hot-toast';
@@ -47,7 +47,7 @@ export default function Header() {
     <header className={`${classes.header} ${scrolled ? classes.scrolled : ''}`}>
       <nav className={`container ${classes['flex-wrapper']}`}>
         <Link href='/' className={classes['logo-wrapper'] + ' active-link'}>
-          <Image src='/logo.jpg' alt={t('logoAlt')} width={120} height={100} priority={true} />
+          <Image src='/logo.jpg' alt={t('logoAlt')} width={80} height={60} priority={true} />
         </Link>
 
         {user && (
@@ -61,19 +61,15 @@ export default function Header() {
             <>
               {user ? (
                 <>
-                  <button onClick={() => router.replace('/')} className={classes.button}>
-                    {t('MainPage')}
-                  </button>
-                  <button onClick={handleSignOut} className={classes.button}>
-                    {t('SignOutLabel')}
-                  </button>
+                  <button onClick={() => router.replace('/')}>{t('MainPage')}</button>
+                  <button onClick={handleSignOut}>{t('SignOutLabel')}</button>
                 </>
               ) : (
                 <>
-                  <Link href='/auth/signin' className={classes.button}>
+                  <Link href='/auth/signin' className={classes.link}>
                     {t('SignInLabel')}
                   </Link>
-                  <Link href='/auth/signup' className={classes.button}>
+                  <Link href='/auth/signup' className={classes.link}>
                     {t('SignUpLabel')}
                   </Link>
                 </>

@@ -3,6 +3,7 @@ import { errorToast } from '@/lib/utils/toast-helpers';
 import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
 import { getAuth, Auth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
+import { Firestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -23,14 +24,14 @@ try {
 }
 
 let auth: Auth;
-let db: ReturnType<typeof getFirestore>;
+let db: Firestore;
 
 try {
   auth = getAuth(app);
   db = getFirestore(app);
 } catch (error) {
   auth = {} as Auth;
-  db = {} as ReturnType<typeof getFirestore>;
+  db = {} as Firestore;
   errorToast('Firebase config error', error);
 }
 

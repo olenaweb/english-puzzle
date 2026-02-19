@@ -4,14 +4,12 @@
   grid-template-rows: auto auto;
 
   width: 100%;
-  max-width: 1440px;
   height: 100%;
-  min-height: 100px;
+  min-height: 60px;
   margin: 0 auto;
 
   font-family: var(--font-ubuntu), system-ui, sans-serif;
-
-  background: var(--header-footer-color);
+  background-color: var(--background-color);
 }
 
 .line {
@@ -43,9 +41,12 @@
 
 .link {
   margin: 0;
-  font-size: clamp(0.875rem, 0.7308rem + 0.5769vw, 1.25rem);
+  font-size: clamp(0.875rem, 0.8529rem + 0.1106vw, 0.9375rem);
   font-weight: 600;
-  color: var(--color);
+}
+
+.year {
+  font-size: clamp(0.875rem, 0.7308rem + 0.5769vw, 1rem);
 }
 
 @media (width <= 480px) {

@@ -29,7 +29,7 @@
     "ru": "РУ"
   },
   "Footer": {
-    "developedBy": "Розроблено з ❤️ by Olena Nevzorova",
+    "developedBy": "Розроблено з ❤️ Оленою Невзоровою",
     "githubLink": "GitHub"
   },
   "AuthForm": {
@@ -69,5 +69,19 @@
     "registrationFailed": "Не вдалося зареєструватися. Будь ласка, спробуйте ще раз.",
     "firebaseConfigError": "Конфігурація Firebase некоректна. Будь ласка, перевірте налаштування.",
     "AuthFailed": "Не вдалося автентифікуватися. Будь ласка, спробуйте ще раз."
+  },
+  "serverMessages": {
+    "STATISTICS_LOG_ADD_ERROR": "Помилка при додаванні запису",
+    "DATA_GET_ERROR": "Помилка при отриманні даних"
+  },
+  "WelcomePage": {
+    "title": "Англійська Головоломка",
+    "welcomeAuth": "З поверненням, {user}!",
+    "letsGoPuzzle": "Давайте перейдемо до головоломки",
+    "chooseLevelTitle": "Оберіть рівень",
+    "rounds": "{count} раундів",
+    "noLevelsAvailable": "Рівні наразі недоступні",
+    "tryAgainLater": "Будь ласка, спробуйте пізніше",
+    "DATA_GET_ERROR": "Помилка завантаження даних. Перевірте підключення."
   }
 }

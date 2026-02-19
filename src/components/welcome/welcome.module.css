@@ -1,0 +1,169 @@
+.levelsContainer {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.levelsTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.levelsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.levelCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.levelCardLink:hover {
+  transform: translateY(-4px);
+}
+
+.levelCard {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.levelCard:hover {
+  border-color: var(--detail-color-light);
+  box-shadow: 0 4px 12px rgba(190, 193, 147, 0.2);
+}
+
+.levelHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.levelNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  /* background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); */
+  background: linear-gradient(135deg, var(--detail-color) 0%, var(--detail-color-light) 100%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.levelName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.levelDescription {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.5rem 0 1rem;
+  flex-grow: 1;
+}
+
+.levelFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.levelRounds {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Состояния загрузки и ошибок */
+.errorContainer,
+.emptyContainer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.errorMessage {
+  font-size: 1.125rem;
+  color: #dc2626;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.emptyContainer {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.emptyContainer p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .levelsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .levelsContainer {
+    padding: 1rem;
+  }
+
+  .levelsTitle {
+    font-size: 1.5rem;
+  }
+
+  .levelCard {
+    padding: 1rem;
+  }
+}
+
+/* Темная тема (опционально) */
+@media (prefers-color-scheme: dark) {
+  .levelsTitle {
+    color: #f9fafb;
+  }
+
+  .levelCard {
+    background: #1f2937;
+    border-color: #374151;
+  }
+
+  .levelName {
+    color: #f9fafb;
+  }
+
+  .levelDescription {
+    color: #9ca3af;
+  }
+
+  .levelFooter {
+    border-top-color: #374151;
+  }
+}

@@ -17,6 +17,7 @@
   --color: #0a0a0a;
   --white-color: #fff;
   --detail-color: rgb(104, 109, 4);
+  --detail-color-light: rgba(205, 211, 100, 0.963);
   --dark-detail-color: rgb(88, 88, 85);
   --disabled-color: rgb(128 128 128 / 73.1%);
   --light-disabled-color: rgb(211 211 211 / 73.1%);
@@ -121,7 +122,6 @@ button {
   border: 1px solid transparent;
   border-radius: 8px;
 
-  /* font-size: clamp(0.875rem, 0.8308rem + 0.2212vw, 1rem); */
   font-size: clamp(0.875rem, 0.8529rem + 0.1106vw, 0.9375rem);
   font-weight: 400;
   color: var(--white-color);
@@ -139,6 +139,7 @@ button:disabled {
 }
 
 button:hover {
+  color: var(--white-color);
   background-color: var(--dark-detail-color);
 }
 
@@ -214,7 +215,6 @@ select option:focus {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 16px;
 }
 
 main {
