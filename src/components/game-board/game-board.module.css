@@ -1,0 +1,33 @@
+.gameBoardContainer {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+/* state of error and empty */
+.errorContainer,
+.emptyContainer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.errorMessage {
+  font-size: 1.125rem;
+  color: #dc2626;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.emptyContainer {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.emptyContainer p {
+  color: #6b7280;
+  font-size: 1rem;
+}

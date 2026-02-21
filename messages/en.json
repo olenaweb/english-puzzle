@@ -72,7 +72,9 @@
   },
   "serverMessages": {
     "STATISTICS_LOG_ADD_ERROR": "Error adding log",
-    "DATA_GET_ERROR": "Error getting data"
+    "DATA_GET_ERROR": "Error getting data",
+    "ROUND_NOT_FOUND": "Round not found",
+    "NO_DATA": "No data found"
   },
   "WelcomePage": {
     "title": "English Puzzle",
@@ -83,5 +85,18 @@
     "noLevelsAvailable": "No levels available at the moment",
     "tryAgainLater": "Please try again later",
     "DATA_GET_ERROR": "Error loading data. Please check your connection."
+  },
+  "GamePage": {
+    "title": "Level {levelNumber}"
+  },
+  "GameBoard": {
+    "tryAgainLater": "Please try again later",
+    "noWordsAvailable": "No words available",
+    "roundTitle": "Level {levelNumber}, Round {roundNumber}",
+    "noWords": "No words available",
+    "title": "Choose the Round",
+    "nextRound": "Next Round",
+    "backToLevels": "Back to Levels",
+    "puzzleCompleted": "Congratulations! You've completed the puzzle!"
   }
 }

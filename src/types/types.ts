@@ -1,4 +1,4 @@
-export interface Words {
+export interface WordsData {
   audioExample: string;
   textExample: string;
   textExampleTranslate: string;
@@ -20,7 +20,7 @@ export interface LevelData {
 
 export interface GetDataResult {
   isSuccess: boolean;
-  data: LevelRoundData[] | Level[] | string;
+  data: LevelRoundData | Level[] | string;
   error?: string;
   message?: string;
   messageCode?: string;
@@ -32,7 +32,7 @@ export interface LevelRoundData {
   roundNumber: number;
   levelId: `level_${number}`;
   levelData: LevelData;
-  words: Words[];
+  words: WordsData[];
   totalWords: number;
   createdAt: Date;
 }

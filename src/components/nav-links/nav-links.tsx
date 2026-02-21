@@ -9,7 +9,7 @@ export default function NavLinks() {
 
   const links = [
     { href: '/welcome', label: t('welcomeClientLink') },
-    { href: '/puzzle', label: t('puzzleLink') },
+    { href: '/puzzle/1/1', label: t('puzzleLink') },
     { href: '/statistics', label: t('statisticsLink') },
   ];
 

@@ -1,6 +1,5 @@
 .levelsContainer {
   padding: 2rem;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -58,7 +57,6 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  /* background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); */
   background: linear-gradient(135deg, var(--detail-color) 0%, var(--detail-color-light) 100%);
   color: white;
   font-size: 1.5rem;

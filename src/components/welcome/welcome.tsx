@@ -8,13 +8,14 @@ import styles from './welcome.module.css';
 interface WelcomeProps {
   levels: Level[];
   error?: string;
+  roundId?: number; // Optional, can be used for dynamic round selection
 }
 
 /**
  * Client Component for displaying the list of levels
  * Shows level cards or an error message
  */
-export default function Welcome({ levels, error }: WelcomeProps) {
+export default function Welcome({ levels, error, roundId = 1 }: WelcomeProps) {
   const t = useTranslations('WelcomePage');
 
   if (error) {
@@ -41,7 +42,8 @@ export default function Welcome({ levels, error }: WelcomeProps) {
         {levels.map((level: Level) => (
           <Link
             key={level.id}
-            href={`/puzzle?level=${level.levelNumber}`}
+            // href={`/puzzle?level=${level.levelNumber}`}
+            href={`/puzzle/${level.levelNumber}/${roundId}`}
             className={styles.levelCardLink}
           >
             <div className={styles.levelCard}>

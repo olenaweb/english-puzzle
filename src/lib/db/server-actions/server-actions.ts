@@ -1,8 +1,10 @@
 'use server';
 
 import { collection, query, getDocs, orderBy } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
+
 import { db } from '@/lib/firebase/config';
-import { GetDataResult, Level } from '@/types/types';
+import { GetDataResult, Level, LevelRoundData } from '@/types/types';
 import { cookies } from 'next/headers';
 
 /**
@@ -44,7 +46,7 @@ export async function getLevelAction(): Promise<GetDataResult> {
     if (querySnapshot.empty) {
       return {
         isSuccess: false,
-        data: [],
+        data: [] as Level[],
         message: 'No levels found in database',
         messageCode: 'NO_DATA',
       };
@@ -67,9 +69,67 @@ export async function getLevelAction(): Promise<GetDataResult> {
     console.error('Error in getLevelAction:', error);
     return {
       isSuccess: false,
-      data: [],
+      data: [] as Level[],
       error: error instanceof Error ? error.message : 'Unknown error',
       message: 'Error getting level data',
+      messageCode: 'DATA_GET_ERROR',
+    };
+  }
+}
+
+export async function getRoundDataAction(
+  levelNumber: string | number,
+  roundNumber: string | number,
+): Promise<GetDataResult> {
+  try {
+    const documentId = `level_${levelNumber}_round_${roundNumber}`;
+
+    // Link to the specific document in the "rounds" collection
+    const docRef = doc(db, 'rounds', documentId);
+    const docSnap = await getDoc(docRef);
+
+    if (!docSnap.exists()) {
+      return {
+        isSuccess: false,
+        data: {} as LevelRoundData,
+        message: `Round ${documentId} not found`,
+        messageCode: 'ROUND_NOT_FOUND',
+      };
+    }
+
+    const data = docSnap.data();
+
+    // mapping data (from Firestore format to our interface)
+    const round: LevelRoundData = {
+      id: data.id,
+      levelId: data.levelId,
+      levelNumber: data.levelNumber,
+      roundNumber: data.roundNumber,
+      totalWords: data.totalWords,
+      levelData: {
+        author: data.levelData.author,
+        cutSrc: data.levelData.cutSrc,
+        id: data.levelData.id,
+        imageSrc: data.levelData.imageSrc,
+        name: data.levelData.name,
+        year: data.levelData.year,
+      },
+      words: data.words, // Array of objects is passed as is
+      createdAt: data.createdAt?.toDate() || new Date(),
+    };
+
+    return {
+      isSuccess: true,
+      data: round as LevelRoundData,
+      message: 'Success',
+    };
+  } catch (error) {
+    console.error('Error in getRoundDataAction:', error);
+    return {
+      isSuccess: false,
+      data: {} as LevelRoundData,
+      error: error instanceof Error ? error.message : 'Unknown error',
+      message: 'Error getting round data',
       messageCode: 'DATA_GET_ERROR',
     };
   }

@@ -79,5 +79,14 @@
     "noLevelsAvailable": "Уровни в данный момент недоступны",
     "tryAgainLater": "Пожалуйста, попробуйте позже",
     "DATA_GET_ERROR": "Ошибка загрузки данных. Проверьте подключение."
+  },
+  "GamePage": {
+    "title": "Уровень {levelNumber}"
+  },
+  "GameBoard": {
+    "tryAgainLater": "Пожалуйста, попробуйте позже",
+    "noWordsAvailable": "Слова недоступны",
+    "roundTitle": "Уровень {levelNumber}, Раунд {roundNumber}",
+    "noWords": "Слова недоступны"
   }
 }
