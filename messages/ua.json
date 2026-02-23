@@ -82,7 +82,18 @@
     "rounds": "{count} раундів",
     "noLevelsAvailable": "Рівні наразі недоступні",
     "tryAgainLater": "Будь ласка, спробуйте пізніше",
-    "DATA_GET_ERROR": "Помилка завантаження даних. Перевірте підключення."
+    "DATA_GET_ERROR": "Помилка завантаження даних. Перевірте підключення.",
+    "viewStats": "Переглянути статистику"
+  },
+  "LevelStatsModal": {
+    "title": "Статистика: {name}",
+    "close": "Закрити",
+    "colRound": "№ Раунду",
+    "colScore": "Очки",
+    "colErrors": "Помилки",
+    "colStars": "Зірки",
+    "round": "Раунд {number}",
+    "viewStats": "Переглянути статистику"
   },
   "GamePage": {
     "title": "Рівень {levelNumber}"

@@ -78,7 +78,18 @@
     "rounds": "{count} раундов",
     "noLevelsAvailable": "Уровни в данный момент недоступны",
     "tryAgainLater": "Пожалуйста, попробуйте позже",
-    "DATA_GET_ERROR": "Ошибка загрузки данных. Проверьте подключение."
+    "DATA_GET_ERROR": "Ошибка загрузки данных. Проверьте подключение.",
+    "viewStats": "Посмотреть статистику"
+  },
+  "LevelStatsModal": {
+    "title": "Статистика: {name}",
+    "close": "Закрыть",
+    "colRound": "№ Раунда",
+    "colScore": "Очки",
+    "colErrors": "Ошибки",
+    "colStars": "Звёзды",
+    "round": "Раунд {number}",
+    "viewStats": "Посмотреть статистику"
   },
   "GamePage": {
     "title": "Уровень {levelNumber}"

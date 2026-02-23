@@ -25,9 +25,6 @@ export default async function GamePage({ params }: GamePageProps) {
   console.log('"GamePage roundId="', roundId);
   const result = await getRoundDataAction(levelId, roundId);
 
-  // if (!result.isSuccess) {
-  //   return <div>{result.message}</div>;
-  // }
   const roundData: LevelRoundData = result.data as LevelRoundData;
   return (
     <div className='container'>

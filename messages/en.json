@@ -84,7 +84,18 @@
     "rounds": "{count} rounds",
     "noLevelsAvailable": "No levels available at the moment",
     "tryAgainLater": "Please try again later",
-    "DATA_GET_ERROR": "Error loading data. Please check your connection."
+    "DATA_GET_ERROR": "Error loading data. Please check your connection.",
+    "viewStats": "View statistics"
+  },
+  "LevelStatsModal": {
+    "title": "Statistics: {name}",
+    "close": "Close",
+    "colRound": "Round №",
+    "colScore": "Score",
+    "colErrors": "Errors",
+    "colStars": "Stars",
+    "round": "Round {number}",
+    "viewStats": "View statistics"
   },
   "GamePage": {
     "title": "Level {levelNumber}"

@@ -241,33 +241,13 @@ footer {
   box-shadow: 0 -2px 8px rgb(0 0 0 / 8%);
 }
 
-.card,
-.modal {
+.card {
   margin-bottom: 16px;
   padding: 16px;
   border-radius: 12px;
 
   background: var(--white-color);
   box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
-}
-
-.image-container {
-  width: 200px;
-  height: 400px;
-}
-
-.sr-only {
-  position: absolute;
-
-  overflow: hidden;
-
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border-width: 0;
-
-  white-space: nowrap;
 }
 
 .centered-container {
@@ -279,50 +259,6 @@ footer {
   justify-content: center;
 
   text-align: center;
-}
-
-.error-button {
-  background-color: var(--red-color);
-}
-
-.error-button:hover {
-  background-color: darkred;
-}
-
-.response-viewer {
-  overflow-y: auto;
-
-  padding: 1rem;
-  border-radius: 8px;
-
-  overflow-wrap: break-word;
-  white-space: pre-wrap;
-
-  background-color: var(--white-color);
-}
-
-.response-viewer-headers {
-  max-height: 200px;
-}
-
-.response-viewer-body {
-  max-height: 400px;
-}
-
-.centered {
-  text-align: center;
-}
-
-.history-row a {
-  display: block;
-  padding: 0.5rem;
-  color: inherit;
-  text-decoration: none;
-}
-
-.history-row:hover {
-  cursor: pointer;
-  background-color: var(--background-color);
 }
 
 .mono {
@@ -344,6 +280,23 @@ footer {
   white-space: pre-wrap;
 
   outline: none;
+}
+
+.underline {
+  text-decoration: none;
+  padding: 0 0 4px;
+  color: black;
+  --color: var(--detail-color);
+  --width: 0%;
+  background:
+    linear-gradient(90deg, var(--color) 50%, transparent 0%) calc(50% - var(--width) / 2) 0% / 0%
+      100%,
+    linear-gradient(var(--color) 0 0) 50% 100% / var(--width) 0.1em no-repeat;
+  transition: 0.5s;
+}
+
+.underline:hover {
+  --width: 100%;
 }
 
 .active-link {

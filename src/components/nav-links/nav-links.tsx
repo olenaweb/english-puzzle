@@ -14,13 +14,17 @@ export default function NavLinks() {
   ];
 
   const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
 
   return (
     <div className={classes.links}>
       {links.map((link, index) => {
-        const isActive = pathname === link.href;
         return (
-          <Link key={index} href={link.href} className={isActive ? 'active-link' : ''}>
+          <Link
+            key={index}
+            href={link.href}
+            className={isActive(link.href) ? `${'active-link underline'}` : 'underline'}
+          >
             {link.label}
           </Link>
         );
