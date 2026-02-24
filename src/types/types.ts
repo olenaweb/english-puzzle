@@ -9,6 +9,13 @@ export interface WordsData {
   textExampleTranslateUa: string;
 }
 
+export interface FilteredWordsData {
+  locale: string;
+  word: string;
+  translate: string;
+  translateUa: string;
+}
+
 export interface LevelData {
   author: string;
   year: string;
@@ -20,7 +27,7 @@ export interface LevelData {
 
 export interface GetDataResult {
   isSuccess: boolean;
-  data: LevelRoundData | Level[] | string;
+  data: LevelRoundData | LevelRoundData[] | Level[] | string;
   error?: string;
   message?: string;
   messageCode?: string;

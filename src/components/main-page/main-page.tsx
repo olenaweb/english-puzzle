@@ -28,11 +28,12 @@ export default function MainPage() {
       )}
       {isLoggedIn && (
         <>
-          <h1>
+          <h1>{t('title')}</h1>
+          <h3>
             {t('welcomeAuth', {
               user: user?.displayName ?? user.email?.split('@').at(0) ?? t('defaultUser'),
             })}
-          </h1>
+          </h3>
           <div className={classes.info}>{t('generalInformation')}</div>
           <div className={classes.controls}>
             <Link href='/welcome' className={classes.button}>

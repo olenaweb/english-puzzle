@@ -59,7 +59,7 @@ export default function Welcome({ levels, error }: WelcomeProps) {
 
   return (
     <div className={styles.levelsContainer}>
-      <h3 className={styles.levelsTitle}>{t('chooseLevelTitle')}</h3>
+      <h1 className={styles.levelsTitle}>{t('chooseLevelTitle')}</h1>
       <div className={styles.levelsGrid}>
         {levels.map((level) => (
           <div

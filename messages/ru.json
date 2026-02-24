@@ -96,12 +96,28 @@
     "title": "Уровень {levelNumber}"
   },
   "RoundPage": {
-    "title": "Уровень {levelNumber}, Раунд {roundNumber}"
+    "title": "Ваш уровень {levelNumber}. Выберите раунд для игры",
+    "roundLabel": "Раунд {roundNumber}",
+    "noRoundsAvailable": "В данный момент нет доступных раундов"
   },
   "GameBoard": {
+    "roundRepeat": "Повторите раунд, чтобы улучшить свой результат",
+    "roundGo": "Перейти к раунду",
     "tryAgainLater": "Пожалуйста, попробуйте позже",
     "noWordsAvailable": "Слова недоступны",
     "roundTitle": "Уровень {levelNumber}, Раунд {roundNumber}",
-    "noWords": "Слова недоступны"
+    "roundLabel": "Раунд {roundNumber}",
+    "wordsBtn": "Слова",
+    "noWords": "Слова недоступны",
+    "title": "Выберите раунд",
+    "nextRound": "Следующий раунд",
+    "backToLevels": "Вернуться к уровням",
+    "puzzleCompleted": "Поздравляем! Вы прошли головоломку!"
+  },
+  "WordsModal": {
+    "title": "Слова раунда",
+    "close": "Закрыть",
+    "colWord": "Слово",
+    "colTranslate": "Перевод"
   }
 }

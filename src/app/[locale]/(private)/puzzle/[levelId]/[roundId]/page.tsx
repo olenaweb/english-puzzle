@@ -1,9 +1,7 @@
-import { getRoundDataAction } from '@/lib/db/server-actions/server-actions';
+import { requireAuthAction, getRoundDataAction } from '@/lib/db/server-actions/server-actions';
 import GameBoard from '@/components/game-board/game-board';
 import { LevelRoundData } from '@/types/types';
 import { getTranslations } from 'next-intl/server';
-import { getCurrentUserIdAction } from '@/lib/db/server-actions/server-actions';
-import { redirect } from 'next/navigation';
 
 interface GamePageProps {
   params: Promise<{
@@ -16,13 +14,8 @@ interface GamePageProps {
 export default async function GamePage({ params }: GamePageProps) {
   const { levelId, roundId, locale } = await params;
   const t = await getTranslations('GamePage');
-  // Check authorization on the server
-  const userId = await getCurrentUserIdAction();
-  if (!userId) {
-    redirect(`/${locale}/auth/signin`);
-  }
-  console.log('"GamePage levelId="', levelId);
-  console.log('"GamePage roundId="', roundId);
+  await requireAuthAction(locale);
+
   const result = await getRoundDataAction(levelId, roundId);
 
   const roundData: LevelRoundData = result.data as LevelRoundData;

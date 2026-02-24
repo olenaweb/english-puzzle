@@ -100,12 +100,28 @@
     "title": "Рівень {levelNumber}"
   },
   "RoundPage": {
-    "title": "Рівень {levelNumber}, Раунд {roundNumber}"
+    "title": "Ваш рівень {levelNumber}. Виберіть раунд для гри",
+    "roundLabel": "Раунд {roundNumber}",
+    "noRoundsAvailable": "В даний момент немає доступних раундів"
   },
   "GameBoard": {
+    "roundRepeat": "Повторіть раунд, щоб покращити свій результат",
+    "roundGo": "Перейти до раунду",
     "tryAgainLater": "Будь ласка, спробуйте пізніше",
     "noWordsAvailable": "Слова недоступні",
     "roundTitle": "Рівень {levelNumber}, Раунд {roundNumber}",
-    "noWords": "Слова недоступні"
+    "roundLabel": "Раунд {roundNumber}",
+    "wordsBtn": "Слова",
+    "noWords": "Слова недоступні",
+    "title": "Виберіть раунд",
+    "nextRound": "Наступний раунд",
+    "backToLevels": "Повернутися до рівнів",
+    "puzzleCompleted": "Вітаємо! Ви пройшли головоломку!"
+  },
+  "WordsModal": {
+    "title": "Слова раунду",
+    "close": "Закрити",
+    "colWord": "Слово",
+    "colTranslate": "Переклад"
   }
 }

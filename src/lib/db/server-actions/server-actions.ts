@@ -1,11 +1,11 @@
 'use server';
 
-import { collection, query, getDocs, orderBy } from 'firebase/firestore';
+import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
 import { doc, getDoc } from 'firebase/firestore';
-
 import { db } from '@/lib/firebase/config';
 import { GetDataResult, Level, LevelRoundData } from '@/types/types';
 import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 /**
  * Server Action for Firestore
@@ -135,6 +135,59 @@ export async function getRoundDataAction(
   }
 }
 
+export async function getRoundsByLevelAction(levelNumber: string | number): Promise<GetDataResult> {
+  try {
+    const roundsQuery = query(
+      collection(db, 'rounds'),
+      where('levelNumber', '==', Number(levelNumber)),
+      orderBy('roundNumber', 'asc'),
+    );
+
+    const querySnapshot = await getDocs(roundsQuery);
+
+    if (querySnapshot.empty) {
+      return {
+        isSuccess: false,
+        data: [] as LevelRoundData[],
+        message: `No rounds found for level ${levelNumber}`,
+        messageCode: 'NO_DATA',
+      };
+    }
+
+    const rounds: LevelRoundData[] = querySnapshot.docs.map((doc) => {
+      const data = doc.data();
+      return {
+        id: data.id,
+        levelId: data.levelId,
+        levelNumber: data.levelNumber,
+        roundNumber: data.roundNumber,
+        totalWords: data.totalWords,
+        levelData: {
+          author: data.levelData.author,
+          cutSrc: data.levelData.cutSrc,
+          id: data.levelData.id,
+          imageSrc: data.levelData.imageSrc,
+          name: data.levelData.name,
+          year: data.levelData.year,
+        },
+        words: data.words,
+        createdAt: data.createdAt?.toDate() || new Date(),
+      };
+    });
+
+    return { isSuccess: true, data: rounds, message: 'Success' };
+  } catch (error) {
+    console.error('Error in getRoundsByLevelAction:', error);
+    return {
+      isSuccess: false,
+      data: [] as LevelRoundData[],
+      error: error instanceof Error ? error.message : 'Unknown error',
+      message: 'Error getting rounds for level',
+      messageCode: 'DATA_GET_ERROR',
+    };
+  }
+}
+
 /**
  * Server Action для получения ID текущего пользователя из cookies
  * @returns Promise с результатом или null если пользователь не авторизован
@@ -147,5 +200,17 @@ export async function getCurrentUserIdAction(): Promise<string | null> {
   } catch (error) {
     console.error('Error in getCurrentUserIdAction:', error);
     return null;
+  }
+}
+
+/**
+ * Проверяет авторизацию пользователя и перенаправляет на страницу входа, если не авторизован.
+ * Используется в Server Components вместо повторяющейся проверки на каждой странице.
+ * @param locale - текущая локаль для формирования пути редиректа
+ */
+export async function requireAuthAction(locale: string): Promise<void> {
+  const userId = await getCurrentUserIdAction();
+  if (!userId) {
+    redirect(`/${locale}/auth/signin`);
   }
 }

@@ -1,8 +1,7 @@
-import { getCurrentUserIdAction, getLevelAction } from '@/lib/db/server-actions/server-actions';
-import { getTranslations } from 'next-intl/server';
-import { redirect } from 'next/navigation';
+import { requireAuthAction, getLevelAction } from '@/lib/db/server-actions/server-actions';
 import Welcome from '@/components/welcome/welcome';
 import { Level } from '@/types/types';
+// import { useLocale } from 'next-intl';
 
 interface Props {
   params: Promise<{
@@ -16,20 +15,14 @@ interface Props {
  */
 export default async function WelcomePage({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations('WelcomePage');
 
-  // Check authorization on the server
-  const userId = await getCurrentUserIdAction();
-  if (!userId) {
-    redirect(`/${locale}/auth/signin`);
-  }
+  await requireAuthAction(locale);
 
   // Get level data on the server
   const result = await getLevelAction();
 
   return (
     <div className='container'>
-      <h1>{t('title')}</h1>
       <Welcome
         levels={result.isSuccess ? (result.data as Level[]) : []}
         error={!result.isSuccess ? result.message : undefined}

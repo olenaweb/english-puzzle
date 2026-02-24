@@ -78,9 +78,7 @@
     "NO_DATA": "No data found"
   },
   "WelcomePage": {
-    "title": "English Puzzle",
     "welcomeAuth": "Welcome back, {user}!",
-    "letsGoPuzzle": "Let's go to the puzzle",
     "chooseLevelTitle": "Choose Your Level",
     "rounds": "{count} rounds",
     "noLevelsAvailable": "No levels available at the moment",
@@ -102,16 +100,28 @@
     "title": "Level {levelNumber}"
   },
   "RoundPage": {
-    "title": "Level {levelNumber}, Round {roundNumber}"
+    "title": "Your Level {levelNumber}. Choose the Round to Play",
+    "roundLabel": "Round {roundNumber}",
+    "noRoundsAvailable": "No rounds available at the moment"
   },
   "GameBoard": {
+    "roundRepeat": "Repeat the round to improve your score",
+    "roundGo": "Go to the round",
     "tryAgainLater": "Please try again later",
     "noWordsAvailable": "No words available",
     "roundTitle": "Level {levelNumber}, Round {roundNumber}",
+    "roundLabel": "Round {roundNumber}",
+    "wordsBtn": "Words",
     "noWords": "No words available",
     "title": "Choose the Round",
     "nextRound": "Next Round",
     "backToLevels": "Back to Levels",
     "puzzleCompleted": "Congratulations! You've completed the puzzle!"
+  },
+  "WordsModal": {
+    "title": "Round Words",
+    "close": "Close",
+    "colWord": "Word",
+    "colTranslate": "Translation"
   }
 }

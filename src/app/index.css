@@ -29,13 +29,15 @@
   --status-neutral-color: #e4c900;
   --status-error-color: #9a1919;
 
-  font-family: Roboto, Inter, Ubuntu, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family:
+    var(--font-inter), var(--font-roboto), var(--font-ubuntu), system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
   font-weight: 400;
   line-height: 1.5;
 }
 
 html {
-  font-family: var(--font-roboto), system-ui, sans-serif;
+  font-family: var(--font-roboto), var(--font-inter), var(--font-ubuntu), system-ui, sans-serif;
   font-size: 16px;
 }
 
@@ -81,6 +83,7 @@ a {
   color: var(--color);
   text-decoration: none;
   font-size: clamp(0.875rem, 0.8529rem + 0.1106vw, 0.9375rem);
+  text-shadow: #666 0px 0px 1px;
 }
 
 a:hover {
@@ -88,21 +91,22 @@ a:hover {
 }
 
 h1 {
-  font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: clamp(1.25rem, 0.9615rem + 1.1538vw, 2rem);
+  font-family: var(--font-roboto), var(--font-inter), var(--font-ubuntu), system-ui, sans-serif;
+  font-size: clamp(1.25rem, 0.9615rem + 1.1538vw, 1.8rem);
   line-height: 1.1;
-  color: var(--color);
+  color: var(--detail-color);
   text-align: center;
+  padding: 0 10px 20px;
 }
 
 h2 {
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-roboto), var(--font-inter), var(--font-ubuntu), system-ui, sans-serif;
   font-size: clamp(1.125rem, 0.8846rem + 0.9615vw, 1.75rem);
   color: var(--color);
 }
 
 h3 {
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-roboto), var(--font-inter), var(--font-ubuntu), system-ui, sans-serif;
   font-size: clamp(1rem, 0.8798rem + 0.4808vw, 1.3125rem);
   color: var(--color);
 }
@@ -293,7 +297,7 @@ footer {
   background:
     linear-gradient(90deg, var(--color) 50%, transparent 0%) calc(50% - var(--width) / 2) 0% / 0%
       100%,
-    linear-gradient(var(--color) 0 0) 50% 100% / var(--width) 0.1em no-repeat;
+    linear-gradient(var(--color) 0 0) 50% 100% / var(--width) 0.15em no-repeat;
   transition: 0.5s;
 }
 
