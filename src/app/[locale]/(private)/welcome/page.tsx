@@ -1,5 +1,4 @@
 import { getCurrentUserIdAction, getLevelAction } from '@/lib/db/server-actions/server-actions';
-// import { handleGetLevelAction } from '@/lib/db/client-action/handle-get-data';
 import { getTranslations } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 import Welcome from '@/components/welcome/welcome';

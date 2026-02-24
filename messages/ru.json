@@ -11,6 +11,7 @@
     "defaultUser": "пользователь",
     "welcomeClientLink": "Добро пожаловать в игру \"Английская Головоломка\"",
     "clientNavLink": "Клиент",
+    "roundLink": "Раунды",
     "puzzleLink": "Головоломка",
     "statisticsLink": "Статистика",
     "signingOut": "Выход...",
@@ -93,6 +94,9 @@
   },
   "GamePage": {
     "title": "Уровень {levelNumber}"
+  },
+  "RoundPage": {
+    "title": "Уровень {levelNumber}, Раунд {roundNumber}"
   },
   "GameBoard": {
     "tryAgainLater": "Пожалуйста, попробуйте позже",

@@ -2,25 +2,35 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { useRouter } from '@/i18n/navigation';
 import { Level } from '@/types/types';
 import styles from './welcome.module.css';
 import LevelStatsModal from './level-stats-modal';
+import { useGameStore } from '@/lib/store/useGameStore';
 
 interface WelcomeProps {
   levels: Level[];
   error?: string;
-  roundId?: number;
 }
 
-export default function Welcome({ levels, error, roundId = 1 }: WelcomeProps) {
+export default function Welcome({ levels, error }: WelcomeProps) {
   const t = useTranslations('WelcomePage');
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState<Level | null>(null);
 
+  const router = useRouter();
+  const setLevel = useGameStore((state) => state.setLevel);
+  const setRound = useGameStore((state) => state.setRound);
+
+  const handleLevelSelect = (_e: React.MouseEvent, levelNumber: number) => {
+    setLevel(levelNumber);
+    setRound(1);
+    router.push(`/rounds/${levelNumber}/1`);
+  };
+
   const handleStatsClick = (e: React.MouseEvent, level: Level) => {
-    e.preventDefault(); // Stop the link navigation
+    e.stopPropagation(); // Prevent click from bubbling up to the card's onClick
     setSelectedLevel(level);
     setIsModalOpen(true);
   };
@@ -51,11 +61,11 @@ export default function Welcome({ levels, error, roundId = 1 }: WelcomeProps) {
     <div className={styles.levelsContainer}>
       <h3 className={styles.levelsTitle}>{t('chooseLevelTitle')}</h3>
       <div className={styles.levelsGrid}>
-        {levels.map((level: Level) => (
-          <Link
+        {levels.map((level) => (
+          <div
             key={level.id}
-            href={`/puzzle/${level.levelNumber}/${roundId}`}
             className={styles.levelCardLink}
+            onClick={(e) => handleLevelSelect(e, level.levelNumber)}
           >
             <div className={styles.levelCard}>
               <div className={styles.levelHeader}>
@@ -79,15 +89,11 @@ export default function Welcome({ levels, error, roundId = 1 }: WelcomeProps) {
                 </span>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
 
-      <LevelStatsModal
-        isOpen={isModalOpen}
-        level={selectedLevel}
-        onClose={closeModal}
-      />
+      <LevelStatsModal isOpen={isModalOpen} level={selectedLevel} onClose={closeModal} />
     </div>
   );
 }
