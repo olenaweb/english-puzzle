@@ -58,6 +58,7 @@
 .actionsCol {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .btnWords,

@@ -1,7 +1,8 @@
-import { requireAuthAction, getRoundDataAction } from '@/lib/db/server-actions/server-actions';
-import GameBoard from '@/components/game-board/game-board';
-import { LevelRoundData } from '@/types/types';
+import { requireAuthAction } from '@/lib/db/server-actions/server-actions';
 import { getTranslations } from 'next-intl/server';
+import { Suspense } from 'react';
+import Spinner from '@/components/spinner/spinner';
+import GameBoardLoader from '@/components/game-board/game-board-loader';
 
 interface GamePageProps {
   params: Promise<{
@@ -16,18 +17,18 @@ export default async function GamePage({ params }: GamePageProps) {
   const t = await getTranslations('GamePage');
   await requireAuthAction(locale);
 
-  const result = await getRoundDataAction(levelId, roundId);
-
-  const roundData: LevelRoundData = result.data as LevelRoundData;
   return (
     <div className='container'>
       <h1>{t('title', { levelNumber: levelId })}</h1>
-      <GameBoard
-        initialWords={result.isSuccess ? roundData : ({} as LevelRoundData)}
-        level={levelId}
-        round={roundId}
-        error={!result.isSuccess ? result.message : undefined}
-      />
+      <Suspense
+        fallback={
+          <div style={{ padding: '20px', textAlign: 'center' }}>
+            <Spinner />
+          </div>
+        }
+      >
+        <GameBoardLoader levelId={levelId} roundId={roundId} />
+      </Suspense>
     </div>
   );
 }
